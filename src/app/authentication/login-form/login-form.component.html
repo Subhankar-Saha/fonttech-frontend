@@ -1,0 +1,31 @@
+<form autocomplete="off" class="cym-login-form" (keydown.enter)="login()">
+	<div class="cym-lf-fields">
+		<div fxLayout="row" fxLayoutAlign="start center" class="cym-lf-username">
+			<input matInput
+				   type="text"
+				   placeholder="Enter Username"
+				   [formControl]="userNameFormControl"
+				   style="text-transform:lowercase"/>
+			<div matSuffix class="cym-lf-icon">
+				<mat-icon class="pointer" matSuffix>
+					person_filled
+				</mat-icon>
+			</div>
+		</div>
+
+		<div fxLayout="row" fxLayoutAlign="start center" class="cym-lf-password">
+			<input matInput
+				   [type]="hidePassword ? 'password' : 'text'"
+				   placeholder="Enter Password"
+				   [formControl]="passwordFormControl"/>
+			<div matSuffix (click)="hidePassword = !hidePassword" class="cym-lf-icon">
+				<mat-icon class="pointer" matSuffix>
+					{{ hidePassword ? 'visibility_off' : 'visibility' }}
+				</mat-icon>
+			</div>
+		</div>
+		<button type="button" (click)="login()" class="cym-login-btn">
+			Sign In
+		</button>
+	</div>
+</form>

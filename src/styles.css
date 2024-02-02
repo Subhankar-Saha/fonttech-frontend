@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color: #f5f7fa;
+    --secondary-color: #090A33;
+    --primary-text-color: #151414;
+    --secondary-text-color: #848484;
+    --primary-input-color: #0c0c2b;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+textarea,
+button,
+select {
+    font: inherit;
+}
+
+app-root {
+    height: 100%;
+    width: 100%;
+}

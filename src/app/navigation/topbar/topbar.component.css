@@ -1,0 +1,29 @@
+.cym-topbar {
+	height: 4rem;
+	background: var(--primary-color);
+	color: var(--primary-text-color);
+	padding: 0.5rem 1.5rem;
+}
+
+
+/* Add this to your global styles or component-specific styles */
+
+/* Initially hide the dropdown */
+.absolute-dropdown {
+	display: none;
+}
+
+/* Show the dropdown when the parent is hovered */
+.flex-container:hover .absolute-dropdown {
+	display: block;
+}
+
+/* Style the dropdown as needed */
+.absolute-dropdown {
+	/* Your existing styles for the dropdown */
+	position: absolute;
+	top: 100%;
+	left: -8rem;
+	z-index: 10;
+	/* ... */
+}
