@@ -15,6 +15,8 @@ export class TopbarComponent {
 	public menuArr: any = [
 		{
 			name: "Product",
+			description: "TV Haua",
+			link : "",
 			icon: `<svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none"
 			viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
 			<path stroke-linecap="round" stroke-linejoin="round"
@@ -26,6 +28,7 @@ export class TopbarComponent {
 		{
 			name: "Store",
 			description: "TV Haua",
+			link : "",
 			icon: `<svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none"
 			viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
 			<path stroke-linecap="round" stroke-linejoin="round"
@@ -37,6 +40,7 @@ export class TopbarComponent {
 		{
 			name: "About",
 			description: "AC Haua",
+			link : "",
 			icon: `<svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none"
 			viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
 			<path stroke-linecap="round" stroke-linejoin="round"
@@ -48,6 +52,7 @@ export class TopbarComponent {
 		{
 			name: "Contact",
 			description: "AC Haua",
+			link : "",
 			icon: `<svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none"
 			viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
 			<path stroke-linecap="round" stroke-linejoin="round"

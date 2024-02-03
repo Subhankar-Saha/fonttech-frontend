@@ -64,18 +64,18 @@ export class ForgetPasswordComponent {
         oldPassword: this.oldPasswordFormControl.value,
         newPassword: this.newPasswordFormControl.value
       }
-      this._transmit.executePostRequest(RequestMapperService.RESET_PASSWORD_URL, obj)
-        .subscribe({
-          next: res => {
-            if (res["success"]) {
-              this._snack.success("Password Reset Successful");
-              this._router.navigate(['/'])
-            }
-          },
-          error: (error: any) => {
-            this._snack.warning(error);
-          }
-        })
+      // this._transmit.executePostRequest(RequestMapperService.RESET_PASSWORD_URL, obj)
+      //   .subscribe({
+      //     next: res => {
+      //       if (res["success"]) {
+      //         this._snack.success("Password Reset Successful");
+      //         this._router.navigate(['/'])
+      //       }
+      //     },
+      //     error: (error: any) => {
+      //       this._snack.warning(error);
+      //     }
+      //   })
     }
   }
 

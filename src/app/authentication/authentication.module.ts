@@ -8,15 +8,16 @@ import { LoginComponent } from './login/login.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
 	declarations: [
 		LoginComponent,
 		LoginFormComponent,
- 		ForgetPasswordComponent
+ 		ForgetPasswordComponent,
+   RegistrationComponent
 	],
 	imports: [
 		CommonModule,
@@ -24,8 +25,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 		MatIconModule,
 		ReactiveFormsModule,
 		MatFormFieldModule,
-		MatInputModule,
-		FlexLayoutModule
+		MatInputModule
 	]
 })
 export class AuthenticationModule { }

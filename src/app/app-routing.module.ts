@@ -6,20 +6,20 @@ import { RequestMapperService } from './request-mapper.service';
 const routes: Routes = [
 	{
 		path: RequestMapperService.BASE_RELATIVE_URL,
-		// canActivate: [AuthGuard],
 		redirectTo: RequestMapperService.getAbsoluteUrl(RequestMapperService.HOME),
 		pathMatch: 'full'
 	},
-	// {
-	// 	path: RequestMapperService.DASHBOARD_URL,
-	// 	// canActivate: [AuthGuard],
-	// 	loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
-	// },
 	{
 		path: RequestMapperService.HOME,
 		// canActivate: [AuthGuard],
 		loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
 	},
+	{
+		path: RequestMapperService.AUTH_URL,
+		// canActivate: [AuthGuard],
+		loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
+	},
+
 ];
 
 @NgModule({
