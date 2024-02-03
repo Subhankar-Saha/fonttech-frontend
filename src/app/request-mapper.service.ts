@@ -12,8 +12,8 @@ export class RequestMapperService {
 	public static readonly FORGET_PASSWORD_URL: string = 'forget-password';
 	public static readonly DASHBOARD_URL: string = 'dashboard';
 	public static readonly HOME: string = 'home';
-	public static readonly REGISTRATION_URL: string = 'signup';
-	public static readonly AUTH_URL: string = 'auth';
+	public static readonly REGISTRATION_URL: string = 'register';
+	public static readonly AUTH_URL: string = 'account';
 
 
 
