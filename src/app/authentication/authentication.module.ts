@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { RaintreeModule } from '../raintree/raintree.module';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { RegistrationComponent } from './registration/registration.component';
 		LoginComponent,
 		LoginFormComponent,
  		ForgetPasswordComponent,
-   RegistrationComponent
+   		RegistrationComponent
 	],
 	imports: [
 		CommonModule,
@@ -25,7 +26,8 @@ import { RegistrationComponent } from './registration/registration.component';
 		MatIconModule,
 		ReactiveFormsModule,
 		MatFormFieldModule,
-		MatInputModule
+		MatInputModule,
+		RaintreeModule
 	]
 })
 export class AuthenticationModule { }

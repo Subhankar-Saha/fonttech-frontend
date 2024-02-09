@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SanitizationDirective } from './sanitization.directive';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ SanitizationDirective ],
   imports: [
-    CommonModule
+    CommonModule,
+  ],
+  exports:[
+    SanitizationDirective
   ]
 })
 export class RaintreeModule { }
