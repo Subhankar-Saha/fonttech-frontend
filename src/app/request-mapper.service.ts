@@ -14,6 +14,8 @@ export class RequestMapperService {
 	public static readonly HOME: string = 'home';
 	public static readonly REGISTRATION_URL: string = 'register';
 	public static readonly AUTH_URL: string = 'account';
+	public static readonly FRANCHISE_URL: string = 'franchise';
+
 
 
 

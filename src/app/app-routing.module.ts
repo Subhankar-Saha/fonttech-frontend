@@ -19,6 +19,11 @@ const routes: Routes = [
 		// canActivate: [AuthGuard],
 		loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
 	},
+	{
+		path: RequestMapperService.FRANCHISE_URL,
+		// canActivate: [AuthGuard],
+		loadChildren: () => import('./franchise/franchise.module').then(m => m.FranchiseModule)
+	},
 
 ];
 
