@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   public disabled: boolean = false;
   constructor(private formBuilder: FormBuilder, private snackbar: SnackService, private _transmit: TransmissionService, private _router: Router){
     this.manualEntryForm = this.formBuilder.group({
-      'emailId': ['', [Validators.required, this._transmit.noWhitespaceValidator]],
+      'userName': ['', [Validators.required, this._transmit.noWhitespaceValidator]],
       'password' : ['',[Validators.required, this._transmit.noWhitespaceValidator]]
     });
   }
