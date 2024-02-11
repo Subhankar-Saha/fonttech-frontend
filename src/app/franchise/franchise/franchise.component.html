@@ -4,9 +4,9 @@
             class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                    New Shop Request Form
+                    Franchise Request Form
                 </h1>
-                <form class="space-y-4 md:space-y-6">
+                <form [formGroup]="manualEntryForm" (ngSubmit)="onSubmit()" class="space-y-4 md:space-y-6" >
                     <div>
                         <label for="full_name"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name
@@ -14,7 +14,7 @@
                         <input inputSanitization [supportedCharaterRange]="'a-zA-Z0-9'" matInput type="text"
                             id="first_name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="John" formControlName="firstName" />
+                            placeholder="John" formControlName="fullName" />
                     </div>
                     <div class="grid gap-6 mb-6 md:grid-cols-2">
                         <div>
@@ -39,31 +39,29 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State
                                 <span class="text-red-500">*</span></label>
                             <input inputSanitization [supportedCharaterRange]="'a-zA-Z'" [convertToUppercase]="true" matInput type="text"
-                                id="company"
+                                id="state"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Bihar" formControlName="companyName" />
+                                placeholder="Bihar" formControlName="state" />
                         </div>
                         <div>
                             <label for="state"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pin Code
                                 <span class="text-red-500">*</span></label>
                             <input inputSanitization [supportedCharaterRange]="'0-9'" matInput type="text"
-                                id="company"
+                                id="pincode"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="123456" formControlName="companyName" />
+                                placeholder="123456" formControlName="pincode" />
                         </div>
                     </div>
                     <div class="mb-6">
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Id
+                        <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Address
                             <span class="text-red-500">*</span></label>
-                        <input matInput type="email" id="email"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="john.doe@company.com" formControlName="emailId" />
+                            <textarea id="address" inputSanitization formControlName="address" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Address"></textarea>
                     </div>
 
                     <div class="mb-6">
-                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
-                        <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Message <span class="text-red-500">*</span></label>
+                        <textarea id="message" formControlName="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
 
                     </div>
 
