@@ -6,6 +6,7 @@
 :root {
     --primary-color: #f5f7fa;
     --secondary-color: #090A33;
+    --primart-bg-color : #d2bea3;
     --primary-text-color: #151414;
     --secondary-text-color: #848484;
     --primary-input-color: #0c0c2b;
@@ -15,7 +16,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 *,

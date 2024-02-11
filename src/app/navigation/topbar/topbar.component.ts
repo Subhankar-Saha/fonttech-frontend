@@ -50,9 +50,9 @@ export class TopbarComponent {
 		</svg>`
 		},
 		{
-			name: "Contact",
+			name: "Contact Us",
 			description: "AC Haua",
-			link : "",
+			link : `${RequestMapperService.CONTACT_URL}`,
 			icon: `<svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none"
 			viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
 			<path stroke-linecap="round" stroke-linejoin="round"

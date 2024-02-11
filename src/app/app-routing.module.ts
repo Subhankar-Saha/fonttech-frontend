@@ -24,6 +24,11 @@ const routes: Routes = [
 		// canActivate: [AuthGuard],
 		loadChildren: () => import('./franchise/franchise.module').then(m => m.FranchiseModule)
 	},
+	{
+		path: RequestMapperService.CONTACT_URL,
+		// canActivate: [AuthGuard],
+		loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+	},
 
 ];
 

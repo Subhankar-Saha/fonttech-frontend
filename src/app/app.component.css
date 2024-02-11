@@ -1,6 +1,12 @@
-.main-container {
-    /* height: 88vh; */
-    position: relative;
-    top: 0;
-    transition: 0.3s ease;
+.cym-main-content {
+	padding: 1rem 0rem;
+	min-height: calc(100% - 4rem);
+}
+
+.cym-main-content-bg{
+    background-color: var(--primart-bg-color);
+}
+
+.h-screen-75{
+    height: 75vh;
 }
