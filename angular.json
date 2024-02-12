@@ -73,28 +73,49 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
-            }
+            "local": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						},
+						"development": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.local.ts",
+									"with": "src/environments/environment.dev.ts"
+								}
+							],
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "12kb",
+									"maximumError": "12kb"
+								}
+							],
+							"outputHashing": "all"
+						}
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "local"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "browserTarget": "fonttech-frontend:build:production"
-            },
-            "development": {
-              "browserTarget": "fonttech-frontend:build:development"
-            }
+            "local": {
+							"browserTarget": "fonttech-frontend:build:local"
+						},
+						"development": {
+							"browserTarget": "fonttech-frontend:build:development"
+						}
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "local"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
