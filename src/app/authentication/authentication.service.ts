@@ -88,32 +88,32 @@ export class AuthenticationService {
 	// 	}
 	// }
 
-	public authenticate(
-		userName: string,
-		password: string,
-		onSuccess: () => void = () => {
-		},
-		onFailure: () => void = () => {
-		},
-		onComplete: () => void = () => {
-		}
-	) {
-		this._transmit
-			.executeConfigurablePostRequest(
-				RequestMapperService.AUTHENTICATION_URL,
-				{ userName, password },
-				false
-			).pipe(untilDestroyed(this))
-			.subscribe({
-				next: (response: JwtResponse) => {
-					onSuccess();
-					this.onAuthenticationSuccess(response);
-				},
-				error: (error: any) => {
-					this._snack.warning(error);
-					onFailure();
-				},
-				complete: () => onComplete()
-			})
-	}
+	// public authenticate(
+	// 	userName: string,
+	// 	password: string,
+	// 	onSuccess: () => void = () => {
+	// 	},
+	// 	onFailure: () => void = () => {
+	// 	},
+	// 	onComplete: () => void = () => {
+	// 	}
+	// ) {
+	// 	this._transmit
+	// 		.executeConfigurablePostRequest(
+	// 			RequestMapperService.AUTHENTICATION_URL,
+	// 			{ userName, password },
+	// 			false
+	// 		).pipe(untilDestroyed(this))
+	// 		.subscribe({
+	// 			next: (response: JwtResponse) => {
+	// 				onSuccess();
+	// 				this.onAuthenticationSuccess(response);
+	// 			},
+	// 			error: (error: any) => {
+	// 				this._snack.warning(error);
+	// 				onFailure();
+	// 			},
+	// 			complete: () => onComplete()
+	// 		})
+	// }
 }

@@ -2,7 +2,6 @@
 
 export const environment = {
 	production: false,
-	// SERVER_ENDPOINT: 'http://localhost:3000/',
-	SERVER_ENDPOINT: '',
+	SERVER_ENDPOINT: 'http://localhost:3000/',
 	APIM_SUBSCRIPTION_KEY: ''
 }

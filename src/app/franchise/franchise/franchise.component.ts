@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SnackService } from 'src/app/notification/snack.service';
 import { TransmissionService } from 'src/app/raintree/transmission.service';
+import { RequestMapperService } from 'src/app/request-mapper.service';
 
 @Component({
   selector: 'app-franchise',
@@ -34,5 +35,18 @@ export class FranchiseComponent implements OnInit {
       this.snackbar.error("Please fill mandatory field")
       return
     }
+    let obj = this.manualEntryForm.getRawValue()
+    this._transmit.executePostRequest(RequestMapperService.SAVE_FRANCHISE_REQ_DETAILS, obj)
+      .subscribe({
+        next :(res: any) =>{
+          if (res["success"]) {
+            this.snackbar.success("Franchise Request Successfully Saved")
+          }
+        },
+        error: (error: any) => {
+					this.snackbar.warning(error);
+				},
+        
+      })
   }
 }

@@ -21,6 +21,8 @@ export class RequestMapperService {
 
 
 	public static readonly AUTHENTICATION_URL: string = environment.SERVER_ENDPOINT + 'auth/login';
+	public static readonly SAVE_FRANCHISE_REQ_DETAILS: string = environment.SERVER_ENDPOINT + 'franchise';
+
 
 	public static getAbsoluteUrl(url: string): string {
 		return RequestMapperService.ROOT_URL + url;

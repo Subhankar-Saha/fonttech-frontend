@@ -45,20 +45,20 @@ export class LoginFormComponent {
 	}
 
 	public login(): void {
-		if (!this.areAllFieldsValid()) {
-			this._snack.error(MessageService.WRONG_CREDENTIAL_ERROR);
-			return;
-		}
+		// if (!this.areAllFieldsValid()) {
+		// 	this._snack.error(MessageService.WRONG_CREDENTIAL_ERROR);
+		// 	return;
+		// }
 
-		this.disableFormControls();
+		// this.disableFormControls();
 
-		this._api.authenticate(
-			this.userNameFormControl.value,
-			this.passwordFormControl.value,
-			() => {},
-			() => this.enableFormControls(),
-			() => this.enableFormControls()
-		)
+		// this._api.authenticate(
+		// 	this.userNameFormControl.value,
+		// 	this.passwordFormControl.value,
+		// 	() => {},
+		// 	() => this.enableFormControls(),
+		// 	() => this.enableFormControls()
+		// )
 	}
 
 }
