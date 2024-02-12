@@ -2,6 +2,6 @@
 
 export const environment = {
 	production: false,
-	SERVER_ENDPOINT: '',
+	SERVER_ENDPOINT: 'https://fonttech-bck.onrender.com/',
 	APIM_SUBSCRIPTION_KEY: ''
 }
