@@ -29,7 +29,11 @@ const routes: Routes = [
 		// canActivate: [AuthGuard],
 		loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
 	},
-
+	{
+		path: RequestMapperService.PAGES_URL,
+		// canActivate: [AuthGuard],
+		loadChildren: () => import('./policy_document/policy.module').then(m => m.policyModule)
+	}
 ];
 
 @NgModule({
