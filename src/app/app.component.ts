@@ -10,4 +10,16 @@ export class AppComponent {
   title = 'Fonttech';
   public screenWidth: number = 0;
   public spinkit: any = Spinkit;
+  public isDarkMode: boolean = false;
+  
+  constructor(){
+    this.toggleDarkMode();
+  }
+  
+  public toggleDarkMode() {
+		this.isDarkMode = !this.isDarkMode;
+		document.body.classList.toggle('dark', this.isDarkMode);
+	}
+
+ 
 }
