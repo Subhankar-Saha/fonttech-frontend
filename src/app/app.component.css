@@ -3,9 +3,6 @@
 	min-height: calc(100% - 4rem);
 }
 
-.cym-main-content-bg{
-    background-color: var(--primart-bg-color);
-}
 
 .h-screen-75{
     height: 75vh;

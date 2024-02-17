@@ -17,11 +17,9 @@ export class RequestMapperService {
 	public static readonly FRANCHISE_URL: string = 'franchise';
 	public static readonly CONTACT_URL: string = 'contact';
 	public static readonly PAGES_URL: string = 'pages';
-	public static readonly PRIVACY_URL: string = 'pages/privacypolicy';
-	public static readonly TERM_URL: string = 'pages/termsofuse';
-
-
-
+	public static readonly PRIVACY_URL: string = `${RequestMapperService.PAGES_URL}/privacypolicy`;
+	public static readonly TERM_URL: string = `${RequestMapperService.PAGES_URL}/termsofuse`;
+	public static readonly FRANCHISE_APPLY_URL: string = `${RequestMapperService.FRANCHISE_URL}/apply`;
 
 	public static readonly AUTHENTICATION_URL: string = environment.SERVER_ENDPOINT + 'auth/login';
 	public static readonly SAVE_FRANCHISE_REQ_DETAILS: string = environment.SERVER_ENDPOINT + 'franchise';

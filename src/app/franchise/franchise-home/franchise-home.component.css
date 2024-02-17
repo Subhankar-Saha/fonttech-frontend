@@ -1,0 +1,55 @@
+.franchiseContent .columnLeft ul li.active,  .franchiseContent .columnLeft ul li:hover {
+    background-color: var(--primary-bg-color);
+}
+
+.franchiseContent .columnLeft ul li {
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    border-top: 1px solid #3d3d3d;
+    text-align: center;
+    background-color: #3d3d3d;
+    font-weight: 500;
+    color: #ffffff;
+    position: relative;
+    padding: 1rem;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+
+.franchiseContent .columnRight {
+    width: 74%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 35px;
+    text-align: left;
+}
+
+.franchiseContent .columnLeft {
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid #eee;
+}
+
+@media only screen and (max-width: 1023px){
+    .franchiseContent .columnRight {
+        width: 59%;
+    }
+    .franchiseContent .columnLeft {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .franchiseContent .columnRight {
+        width: 100%;
+    }
+    .franchiseContent  .columnLeft {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+}
+

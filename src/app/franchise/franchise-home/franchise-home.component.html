@@ -1,0 +1,20 @@
+<div class="content-bg">
+    <div class="flex franchiseContent content-bg flex-col md:flex-row">
+        <div class="columnLeft p-4 w-full md:w-40">
+            <ul>
+                <li [class.active]="contentType === 'OVERVIEW' || contentType === '' " (click)='onclick("OVERVIEW")'><a class="cursor-pointer"><span class="icon01"></span><br>OVERVIEW</a></li>
+                <li [class.active]="contentType === 'PARTNERSHIP_OPPORTUNITIES'" (click)='onclick("PARTNERSHIP_OPPORTUNITIES")'><a class="cursor-pointer"><span class="icon02"></span><br>PARTNERSHIP OPPORTUNITIES</a></li>
+                <li [class.active]="contentType === 'BUSINESS_PARTNER'" (click)='onclick("BUSINESS_PARTNER")'><a class="cursor-pointer" ><span class="icon03"></span><br>PREFERRED BUSINESS PARTNER PROFILE</a></li>
+                <li [class.active]="contentType === 'BUSINESS_PROPOSAL'" (click)='onclick("BUSINESS_PROPOSAL")'><a class="cursor-pointer" ><span class="icon04"></span><br>BUSINESS PROPOSAL</a></li>
+                <li><a class="cursor-pointer"  routerLink="/franchise/apply"><span class="icon04"></span><br>Franchise Request</a></li>
+            </ul>
+        </div>
+        <div class="columnRight p-4 w-full md:w-59">
+            <app-franchise-overview-content *ngIf ="contentType === 'OVERVIEW' || contentType === '' "></app-franchise-overview-content>
+            <app-franchise-partnership-content *ngIf ="contentType === 'PARTNERSHIP_OPPORTUNITIES' "></app-franchise-partnership-content>
+            <app-franchise-business-partner-content *ngIf ="contentType === 'BUSINESS_PARTNER' "></app-franchise-business-partner-content>
+            <app-franchise-business-proposal-content *ngIf ="contentType === 'BUSINESS_PROPOSAL' "></app-franchise-business-proposal-content>
+        </div>
+    </div>
+</div>
+

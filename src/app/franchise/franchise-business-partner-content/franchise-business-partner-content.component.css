@@ -1,0 +1,44 @@
+.heading h1 {
+    color: var(--primary-bg-color);
+    font-size: 38px;
+    margin-bottom: 18px;
+    line-height: 40px;
+    font-weight: 500;
+}
+
+.franchiseList {
+    margin: -10px 0 20px;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+    display: block;
+}
+
+.franchiseList li {
+    width: 100%;
+    display: block;
+    margin: 0 0 10px;
+    padding: 0 0 0 20px;
+    background: url(../../../assets/icon/circle-list.png) left 7px no-repeat;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+li, ul {
+    list-style: none;
+}
+
+li, ul {
+    list-style: none;
+}
+
+@media (max-width: 979px){
+    .heading h1 {
+        text-align: center;
+        font-size: 30px;
+        /* margin-bottom: 0; */
+    }
+}
+
+

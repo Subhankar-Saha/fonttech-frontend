@@ -7,10 +7,10 @@ import { RequestMapperService } from 'src/app/request-mapper.service';
 
 @Component({
   selector: 'app-franchise',
-  templateUrl: './franchise.component.html',
-  styleUrls: ['./franchise.component.css']
+  templateUrl: './franchise-request-form.component.html',
+  styleUrls: ['./franchise-request-form.component.css']
 })
-export class FranchiseComponent implements OnInit {
+export class FranchiseRequestFormComponent implements OnInit {
   public manualEntryForm: FormGroup;
   public disabled: boolean = false;
   constructor(private formBuilder: FormBuilder, private snackbar: SnackService, private _transmit: TransmissionService, private _router : Router){
