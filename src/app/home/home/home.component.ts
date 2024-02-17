@@ -58,10 +58,10 @@ export class HomeComponent {
       description: 'AC Haua',
       src: '../../../assets/images/home-theater.png',
     },
-	{
-		name: 'AC',
-		description: 'AC Haua',
-		src: '../../../assets/images/air-conditioner.png',
-	  }
+	// {
+	// 	name: 'AC',
+	// 	description: 'AC Haua',
+	// 	src: '../../../assets/images/air-conditioner.png',
+	//   }
   ];
 }
