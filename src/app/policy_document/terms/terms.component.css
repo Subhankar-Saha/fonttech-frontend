@@ -1,0 +1,14 @@
+.field-items ul li {
+    /* font-size: 1.3em; */
+    padding: 0 0 10px 15px;
+    background: url(../../../assets/icon/bullet_pink_square.gif) 0 4px no-repeat;
+}
+
+h4{
+    @apply font-semibold;
+    @apply text-lg;
+}
+
+p {
+    padding-bottom: 10px;
+}
