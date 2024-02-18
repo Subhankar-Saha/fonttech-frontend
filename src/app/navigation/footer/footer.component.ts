@@ -22,6 +22,9 @@ export class FooterComponent implements OnInit {
     else if(value === 'TERMS'){
       this._router.navigate([RequestMapperService.TERM_URL])
     }
+    else if(value === 'CONTACT'){
+      this._router.navigate([RequestMapperService.CONTACT_URL])
+    }
   }
 
 

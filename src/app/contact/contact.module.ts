@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ContactRoutingModule} from './franchise-routing.module';
+import { ContactRoutingModule} from './contact-routing.module';
 import { ContactComponent } from './contact/contact.component';
 
 

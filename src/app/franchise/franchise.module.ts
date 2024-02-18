@@ -14,6 +14,7 @@ import { FranchiseOverviewContentComponent } from './franchise-overview-content/
 import { FranchisePartnershipContentComponent } from './franchise-partnership-content/franchise-partnership-content.component';
 import { FranchiseBusinessPartnerContentComponent } from './franchise-business-partner-content/franchise-business-partner-content.component';
 import { FranchiseBusinessProposalContentComponent } from './franchise-business-proposal-content/franchise-business-proposal-content.component';
+import { FranchiseContactComponent } from './franchise-contact/franchise-contact.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FranchiseBusinessProposalContentComponent } from './franchise-business-
     FranchiseOverviewContentComponent,
     FranchisePartnershipContentComponent,
     FranchiseBusinessPartnerContentComponent,
-    FranchiseBusinessProposalContentComponent
+    FranchiseBusinessProposalContentComponent,
+    FranchiseContactComponent
   ],
   imports: [
     CommonModule,
