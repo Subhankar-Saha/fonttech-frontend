@@ -14,3 +14,11 @@
         margin-bottom: 0;
     }
 }
+
+table tr{
+    @apply border border-b border-black;
+}
+
+table td , table th{
+    @apply p-2
+}

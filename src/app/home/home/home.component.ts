@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { imageFileNames } from './banner_image';
 
 @Component({
   selector: 'app-home',
@@ -7,40 +8,9 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   constructor() {
-    console.log('welcome');
+    
   }
-  public imageBannerArr: any = [
-    {
-      name: 'Image1',
-      description: 'AC Haua',
-      src: '../../../assets/banner/image2fan.jpg',
-    },
-    {
-      name: 'Image1',
-      description: 'AC Haua',
-      src: '../../../assets/banner/image1fan.png',
-    },
-    {
-      name: 'Image1',
-      description: 'AC Haua',
-      src: '../../../assets/banner/image2fan.jpg',
-    },
-    {
-      name: 'Image1',
-      description: 'AC Haua',
-      src: '../../../assets/banner/image1fan.png',
-    },
-    {
-      name: 'Image1',
-      description: 'AC Haua',
-      src: '../../../assets/banner/image2fan.jpg',
-    },
-    {
-      name: 'Image1',
-      description: 'AC Haua',
-      src: '../../../assets/banner/image1fan.png',
-    },
-  ];
+  public imageBannerArr: any = imageFileNames;
 
   public productsArr: any = [
     {
