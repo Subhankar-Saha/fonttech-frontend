@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "node src/app/home/home/banner_image.js && ng serve",
     "build": "node src/app/home/home/banner_image.js && ng build",
-    "serve-dev": "ng serve --configuration=development",
-    "build-dev": "ng build --configuration=development",
+    "serve-dev": "node src/app/home/home/banner_image.js && ng serve --configuration=development",
+    "build-dev": "node src/app/home/home/banner_image.js && ng build --configuration=development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
