@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { TopbarComponent } from './topbar/topbar.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
 	declarations: [
 		TopbarComponent,
-		FooterComponent
+		FooterComponent,
+  		ModalComponent
 	],
 	imports: [
 		CommonModule,
@@ -16,8 +18,9 @@ import { FooterComponent } from './footer/footer.component';
 	],
 	exports: [
 		TopbarComponent,
-		FooterComponent
-	]
+		FooterComponent,
+		ModalComponent
+	],
 })
 export class NavigationModule {
 }

@@ -1,0 +1,86 @@
+/* franchise-modal.component.css */
+
+.franchise-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.franchise-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal-container {
+  background-color: #fff;
+  /* Set background color to white */
+  width: 100%;
+  /* Full width on small screens */
+  max-width: 32rem;
+  /* Maximum width on larger screens */
+  margin-left: auto;
+  /* Center horizontally */
+  margin-right: auto;
+  /* Center horizontally */
+  border-radius: 0.375rem;
+  /* Rounded corners */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* Shadow for elevation */
+  z-index: 50;
+  /* Z-index to ensure it appears above other elements */
+  overflow-y: auto;
+  /* Enable vertical scrolling if content overflows */
+  position: relative;
+  /* Positioning context for absolute positioning of child elements */
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black overlay */
+  position: fixed;
+  /* Fixed position to cover the entire screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  /* Z-index to ensure it appears beneath the modal container but above other elements */
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+}
+
+.modal-content {
+  max-width: 640px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  overflow: hidden;
+}
+
+/* For small screens (sm) and larger */
+@media (min-width: 640px) {
+  modal-container {
+    max-width: auto;
+    margin: auto;
+  }
+}
+
+/* For extra-small screens (xs) and larger */
+@media (min-width: 400px) {
+  modal-container {
+    max-width: 85%;
+    margin: auto;
+  }
+}

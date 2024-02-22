@@ -1,37 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { imageFileNames } from './banner_image';
+import { ModalComponent } from 'src/app/navigation/modal/modal.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
-  constructor() {
-    
+export class HomeComponent implements OnInit {
+  constructor() {}
+  public isFranchiseModalOpen: boolean = false;
+  ngOnInit(): void {
+    if(!sessionStorage.getItem("banner")){
+      this.showFranchiseModalWithAnimation();
+    }
   }
   public imageBannerArr: any = imageFileNames;
 
   public productsArr: any = [
     {
       name: 'Fans',
-      description: 'AC Haua',
+      description: '',
       src: '../../../assets/images/ceiling-fan.png',
     },
     {
       name: 'TVs',
-      description: 'AC Haua',
+      description: '',
       src: '../../../assets/images/television.png',
     },
     {
       name: 'Home Theaters',
-      description: 'AC Haua',
+      description: '',
       src: '../../../assets/images/home-theater.png',
-    },
-	// {
-	// 	name: 'AC',
-	// 	description: 'AC Haua',
-	// 	src: '../../../assets/images/air-conditioner.png',
-	//   }
+    }
   ];
+
+  showFranchiseModalWithAnimation() {
+    this.isFranchiseModalOpen = true;
+    sessionStorage.setItem("banner", 'true')
+  }
 }
