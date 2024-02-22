@@ -22,10 +22,6 @@
 .modal-container {
   background-color: #fff;
   /* Set background color to white */
-  width: 100%;
-  /* Full width on small screens */
-  max-width: 32rem;
-  /* Maximum width on larger screens */
   margin-left: auto;
   /* Center horizontally */
   margin-right: auto;
@@ -78,7 +74,7 @@
 }
 
 /* For extra-small screens (xs) and larger */
-@media (min-width: 400px) {
+@media (min-width: 250px) {
   modal-container {
     max-width: 85%;
     margin: auto;
