@@ -14,13 +14,14 @@ export class HomeComponent implements OnInit {
   public isFranchiseModalOpen: boolean = false;
   public content:string = `Explore thrilling franchise opportunities with FontTech. Join us in providing top-notch electronic solutions across India. Are you excited?`;
   public header: string = "Franchise Opportunities";
-
+  public imageBannerArr: string[] = [];
   ngOnInit(): void {
     if(!sessionStorage.getItem("banner")){
       this.showFranchiseModalWithAnimation();
     }
+    this.imageBannerArr = imageFileNames
   }
-  public imageBannerArr: any = imageFileNames;
+  
 
   public productsArr: any = [
     {
@@ -42,7 +43,7 @@ export class HomeComponent implements OnInit {
 
   showFranchiseModalWithAnimation() {
     this.isFranchiseModalOpen = true;
-    // sessionStorage.setItem("banner", 'true')
+    sessionStorage.setItem("banner", 'true')
   }
 
   onClickRedirect(value:string){
