@@ -30,7 +30,8 @@ export class ModalComponent implements OnInit {
   }
 
   closeModal() {
-    this._modalService.closeModal()
+    this._modalService.closeModal();
+    document.body.style.overflow = ''; 
   }
 
   onClick(){
