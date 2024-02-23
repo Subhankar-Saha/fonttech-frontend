@@ -11,7 +11,6 @@ export class AppComponent {
   public screenWidth: number = 0;
   public spinkit: any = Spinkit;
   public isDarkMode: boolean = false;
-  
   constructor(){
     this.toggleDarkMode();
   }
@@ -21,5 +20,4 @@ export class AppComponent {
 		document.body.classList.toggle('dark', this.isDarkMode);
 	}
 
- 
 }

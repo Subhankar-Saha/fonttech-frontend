@@ -4,6 +4,8 @@ import { MessageService } from "../../message.service";
 import { JWTService } from "../../authentication/jwt.service";
 import { Router } from "@angular/router";
 import { SnackService } from "../../notification/snack.service";
+import { firstValueFrom } from 'rxjs';
+import { ModalService } from 'src/app/modal.service';
 
 @Component({
 	selector: 'app-topbar',
@@ -78,7 +80,8 @@ export class TopbarComponent {
 	constructor(
 		private _jwt: JWTService,
 		private _router: Router,
-		private _snack: SnackService
+		private _snack: SnackService,
+		private _modalService: ModalService
 	) {
 	}
 
@@ -94,4 +97,11 @@ export class TopbarComponent {
 	public onClick(value:string){
 		this._snack.info("Registered Users can only do")
 	}
+
+	public async modalStopPropagation(event: Event) {
+		const modalState = await firstValueFrom(this._modalService.modalState$);
+		if (modalState) {
+		  event.stopPropagation();
+		}
+	  }
 }

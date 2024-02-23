@@ -1,6 +1,6 @@
 // franchise-modal.component.ts
 
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ModalService } from 'src/app/modal.service';
 import { Router } from '@angular/router';
@@ -19,9 +19,14 @@ import { RequestMapperService } from 'src/app/request-mapper.service';
   ]
 })
 export class ModalComponent implements OnInit {
-  constructor(public _modalService : ModalService, private _router: Router){}
+  constructor(public _modalService : ModalService){}
+  @Input() content: string = '';
+  @Input() header:  string = '';
+  @Output() confirmEvent = new EventEmitter<string>();
+
   ngOnInit(): void {
     this._modalService.openModal()
+    document.body.style.overflow = 'hidden'; 
   }
 
   closeModal() {
@@ -30,7 +35,12 @@ export class ModalComponent implements OnInit {
 
   onClick(){
     this.closeModal();
-    this._router.navigateByUrl(`${RequestMapperService.FRANCHISE_URL}`)
+    this.confirmEvent.emit("true");
+  }
+
+  stopPropagation(event: Event) {
+    console.log(event)
+    event.stopPropagation(); // Prevent click propagation to the overlay
   }
 
 }
