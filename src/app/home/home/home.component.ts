@@ -24,17 +24,17 @@ export class HomeComponent implements OnInit {
 
   public productsArr: any = [
     {
-      name: 'TVs',
+      name: 'Smart TV',
       description: '',
       src: '../../../assets/images/smart-tv.jpg',
     },
     {
-      name: 'Home Theaters',
+      name: 'Home Theater',
       description: '',
       src: '../../../assets/images/home-theater.png',
     },
     {
-      name: 'Fans',
+      name: 'Fan',
       description: '',
       src: '../../../assets/images/ceiling-fan.png',
     }
