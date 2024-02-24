@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
 
   showFranchiseModalWithAnimation() {
     this.isFranchiseModalOpen = true;
-    // sessionStorage.setItem("banner", 'true')
+    sessionStorage.setItem("banner", 'true')
   }
 
   onClickRedirect(value:string){
