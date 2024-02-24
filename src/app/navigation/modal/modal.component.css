@@ -39,7 +39,7 @@
 }
 
 .modal-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 98);
   /* Semi-transparent black overlay */
   position: fixed;
   /* Fixed position to cover the entire screen */

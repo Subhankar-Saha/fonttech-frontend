@@ -3,8 +3,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ModalService } from 'src/app/modal.service';
-import { Router } from '@angular/router';
-import { RequestMapperService } from 'src/app/request-mapper.service';
 
 @Component({
   selector: 'app-modal',
@@ -40,7 +38,6 @@ export class ModalComponent implements OnInit {
   }
 
   stopPropagation(event: Event) {
-    console.log(event)
     event.stopPropagation(); // Prevent click propagation to the overlay
   }
 

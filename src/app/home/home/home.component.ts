@@ -24,25 +24,25 @@ export class HomeComponent implements OnInit {
 
   public productsArr: any = [
     {
-      name: 'Fans',
-      description: '',
-      src: '../../../assets/images/ceiling-fan.png',
-    },
-    {
       name: 'TVs',
       description: '',
-      src: '../../../assets/images/television.png',
+      src: '../../../assets/images/smart-tv.jpg',
     },
     {
       name: 'Home Theaters',
       description: '',
       src: '../../../assets/images/home-theater.png',
+    },
+    {
+      name: 'Fans',
+      description: '',
+      src: '../../../assets/images/ceiling-fan.png',
     }
   ];
 
   showFranchiseModalWithAnimation() {
     this.isFranchiseModalOpen = true;
-    sessionStorage.setItem("banner", 'true')
+    // sessionStorage.setItem("banner", 'true')
   }
 
   onClickRedirect(value:string){
