@@ -6,8 +6,12 @@ import { RequestMapperService } from './request-mapper.service';
 const routes: Routes = [
 	{
 		path: RequestMapperService.BASE_RELATIVE_URL,
-		redirectTo: RequestMapperService.getAbsoluteUrl(RequestMapperService.HOME),
+		redirectTo: RequestMapperService.getAbsoluteUrl(RequestMapperService.BASE_RELATIVE_URL),
 		pathMatch: 'full'
+	},
+	{
+		path: RequestMapperService.BASE_RELATIVE_URL,
+		loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
 	},
 	{
 		path: RequestMapperService.HOME,

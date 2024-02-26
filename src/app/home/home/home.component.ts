@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { imageFileNames } from './banner_image';
 import { Router } from '@angular/router';
 import { RequestMapperService } from 'src/app/request-mapper.service';
+import { ModalService } from 'src/app/modal.service';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,7 @@ import { RequestMapperService } from 'src/app/request-mapper.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private _router: Router) {}
-  public isFranchiseModalOpen: boolean = false;
+  constructor(private _router: Router, public _modalService: ModalService) {}
   public content:string = `Explore thrilling franchise opportunities with FontTech. Join us in providing top-notch electronic solutions across India.`;
   public header: string = "Franchise Opportunities";
   public imageBannerArr: string[] = [];
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
   ];
 
   showFranchiseModalWithAnimation() {
-    this.isFranchiseModalOpen = true;
+    this._modalService.openModal();
     sessionStorage.setItem("banner", 'true')
   }
 

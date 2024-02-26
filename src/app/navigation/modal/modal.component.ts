@@ -3,6 +3,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ModalService } from 'src/app/modal.service';
+import { filter, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-modal',
@@ -24,12 +25,12 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
     this._modalService.openModal()
-    document.body.style.overflow = 'hidden'; 
+    document.body.style.overflow = 'hidden';
   }
 
   closeModal() {
     this._modalService.closeModal();
-    document.body.style.overflow = ''; 
+    document.body.style.overflow = '';
   }
 
   onClick(){
@@ -38,7 +39,11 @@ export class ModalComponent implements OnInit {
   }
 
   stopPropagation(event: Event) {
-    event.stopPropagation(); // Prevent click propagation to the overlay
+    this._modalService.modalState$.pipe(
+      filter((res: boolean) => res === true),
+      tap(() => {
+        event.stopPropagation(); // Prevent click propagation to the overlay
+      })
+    ).subscribe();
   }
-
 }

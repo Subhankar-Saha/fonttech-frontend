@@ -1,4 +1,4 @@
-<app-modal [content]="content" [header]="header" (confirmEvent)="onClickRedirect($event)" *ngIf="isFranchiseModalOpen"></app-modal>
+<app-modal [content]="content" [header]="header" (confirmEvent)="onClickRedirect($event)" *ngIf="_modalService.modalState$ | async"></app-modal>
 <div class="content-bg p-4 min-h-screen">
   <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <!-- Carousel wrapper -->
