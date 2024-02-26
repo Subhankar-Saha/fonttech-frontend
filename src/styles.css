@@ -53,3 +53,7 @@ app-root {
 .content-bg{
     background-color: var(--secondary-bg-color);
 }
+
+.h70{
+    height: 70vh !important;
+}
