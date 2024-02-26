@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "node src/app/home/home/banner_image.js && ng serve",
+    "start": "node src/app/home/home/banner_image.js && ng serve --o",
     "build": "node src/app/home/home/banner_image.js && ng build",
     "serve-dev": "node src/app/home/home/banner_image.js && ng serve --configuration=development",
     "build-dev": "node src/app/home/home/banner_image.js && ng build --configuration=development",
