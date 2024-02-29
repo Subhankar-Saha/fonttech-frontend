@@ -1,0 +1,9 @@
+@media (min-width: 300px) {
+	.responsive {
+		height: 70% !important;
+	}
+}
+
+.responsive {
+    height: 100% !important;
+}
