@@ -1,33 +1,32 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { SnackService } from 'src/app/notification/snack.service';
-import { MessageService } from 'src/app/message.service';
-import { TransmissionService } from 'src/app/raintree/transmission.service';
-import { Router } from '@angular/router';
-import { RequestMapperService } from 'src/app/request-mapper.service';
+import { Component } from "@angular/core";
+import { FormControl, Validators } from "@angular/forms";
+import { SnackService } from "src/app/notification/snack.service";
+import { MessageService } from "src/app/message.service";
+import { TransmissionService } from "src/app/raintree/transmission.service";
+import { Router } from "@angular/router";
+import { RequestMapperService } from "src/app/request-mapper.service";
 
 @Component({
-  selector: 'app-forget-password',
-  templateUrl: './forget-password.component.html',
-  styleUrls: ['./forget-password.component.css']
+  selector: "app-forget-password",
+  templateUrl: "./forget-password.component.html",
+  styleUrls: ["./forget-password.component.css"],
 })
 export class ForgetPasswordComponent {
-
-  public userNameFormControl: FormControl = new FormControl('', [
-    Validators.required
+  public userNameFormControl: FormControl = new FormControl("", [
+    Validators.required,
   ]);
 
-  public oldPasswordFormControl: FormControl = new FormControl('', [
-    Validators.required
+  public oldPasswordFormControl: FormControl = new FormControl("", [
+    Validators.required,
   ]);
 
-  public newPasswordFormControl: FormControl = new FormControl('', [
-    Validators.required
+  public newPasswordFormControl: FormControl = new FormControl("", [
+    Validators.required,
   ]);
 
-  public confirmPasswordFormControl: FormControl = new FormControl('', [
-    Validators.required
-  ])
+  public confirmPasswordFormControl: FormControl = new FormControl("", [
+    Validators.required,
+  ]);
 
   public hidePassword1: boolean = true;
   public hidePassword2: boolean = true;
@@ -36,34 +35,36 @@ export class ForgetPasswordComponent {
   constructor(
     private _snack: SnackService,
     private _transmit: TransmissionService,
-    private _router: Router
-  ) { }
-  
+    private _router: Router,
+  ) {}
+
   public areAllFieldsValid(): boolean {
-		return (
-			this.userNameFormControl.valid &&
-			this.oldPasswordFormControl.valid &&
+    return (
+      this.userNameFormControl.valid &&
+      this.oldPasswordFormControl.valid &&
       this.newPasswordFormControl.valid &&
-      this.confirmPasswordFormControl.valid 
-		);
-	}
+      this.confirmPasswordFormControl.valid
+    );
+  }
   public submit() {
-
     if (!this.areAllFieldsValid()) {
-			this._snack.error("Field Value Missing");
-			return;
-		}
+      this._snack.error("Field Value Missing");
+      return;
+    }
 
-    if(this.newPasswordFormControl.value !== this.confirmPasswordFormControl.value){
-      return this._snack.error("new passoword and confirm password mismatch")
-     }
+    if (
+      this.newPasswordFormControl.value !==
+      this.confirmPasswordFormControl.value
+    ) {
+      return this._snack.error("new passoword and confirm password mismatch");
+    }
 
-    if (this.areAllFieldsValid()){
+    if (this.areAllFieldsValid()) {
       let obj = {
         userName: this.userNameFormControl.value,
         oldPassword: this.oldPasswordFormControl.value,
-        newPassword: this.newPasswordFormControl.value
-      }
+        newPassword: this.newPasswordFormControl.value,
+      };
       // this._transmit.executePostRequest(RequestMapperService.RESET_PASSWORD_URL, obj)
       //   .subscribe({
       //     next: res => {
@@ -80,6 +81,10 @@ export class ForgetPasswordComponent {
   }
 
   public isPasswordMismatch(): boolean {
-    return this.newPasswordFormControl.value !== this.confirmPasswordFormControl.value && this.confirmPasswordFormControl.dirty;
+    return (
+      this.newPasswordFormControl.value !==
+        this.confirmPasswordFormControl.value &&
+      this.confirmPasswordFormControl.dirty
+    );
   }
 }

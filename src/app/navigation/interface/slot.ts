@@ -1,6 +1,6 @@
 export interface ISlot {
-	_id: string;
-	name: string;
-	row: string;
-	col: number;
+  _id: string;
+  name: string;
+  row: string;
+  col: number;
 }

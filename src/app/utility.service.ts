@@ -1,15 +1,13 @@
-import {Injectable} from '@angular/core';
-import {v4 as uuidv4} from 'uuid';
+import { Injectable } from "@angular/core";
+import { v4 as uuidv4 } from "uuid";
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: "root",
 })
 export class UtilityService {
+  constructor() {}
 
-	constructor() {
-	}
-
-	public getUniqueUUID(): string {
-		return uuidv4();
-	}
+  public getUniqueUUID(): string {
+    return uuidv4();
+  }
 }

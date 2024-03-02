@@ -1,35 +1,29 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { HttpErrorResponse } from "@angular/common/http";
 import { ConstantService } from "../constant.service";
 import { Observable, throwError } from "rxjs";
-import { environment } from 'src/environments/environment.dev';
+import { environment } from "src/environments/environment.dev";
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: "root",
 })
 export class HttpErrorHandlerService {
+  constructor() {}
 
-	constructor() {
-	}
+  private static prepareErrorMessage(error: HttpErrorResponse): string {
+    if (!environment.production) console.trace();
 
-	private static prepareErrorMessage(
-		error: HttpErrorResponse
-	): string {
+    let errorMessage: string;
 
-		if (!environment.production) console.trace();
+    if (error.error instanceof ErrorEvent) errorMessage = error.error.message;
+    else if (error.status === 0)
+      errorMessage = ConstantService.COULD_NOT_CONNECT_TO_SERVER_ERROR;
+    else errorMessage = error.error.message;
 
-		let errorMessage: string;
+    return errorMessage;
+  }
 
-		if (error.error instanceof ErrorEvent) errorMessage = error.error.message;
-		else if (error.status === 0) errorMessage = ConstantService.COULD_NOT_CONNECT_TO_SERVER_ERROR;
-		else errorMessage = error.error.message;
-
-		return errorMessage;
-	}
-
-	public intercept(error: HttpErrorResponse): Observable<any> {
-		return throwError(
-			() => HttpErrorHandlerService.prepareErrorMessage(error)
-		);
-	}
+  public intercept(error: HttpErrorResponse): Observable<any> {
+    return throwError(() => HttpErrorHandlerService.prepareErrorMessage(error));
+  }
 }

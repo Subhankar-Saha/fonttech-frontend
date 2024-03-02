@@ -1,8 +1,6 @@
-import {ITableSlot} from "./table-slot";
+import { ITableSlot } from "./table-slot";
 
 export interface IBucketLayoutTableData {
-	row: string;
-	slots: ITableSlot[]
+  row: string;
+  slots: ITableSlot[];
 }
-
-
