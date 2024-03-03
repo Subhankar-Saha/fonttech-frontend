@@ -1,9 +1,8 @@
 .cym-main-content {
-	padding: 1rem 0rem;
-	min-height: calc(100% - 4rem);
+  padding: 1rem 0rem;
+  min-height: calc(100% - 4rem);
 }
 
-
-.h-screen-75{
-    height: 75vh;
+.h-screen-75 {
+  height: 75vh;
 }

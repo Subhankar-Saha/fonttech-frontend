@@ -1,12 +1,14 @@
 import gulp from 'gulp';
-const { series, parallel, src, dest, task } = gulp;
-import { exec } from 'node:child_process';
+const {series} = gulp;
 import prettier from 'gulp-prettier';
 import gzip from 'gulp-gzip';
 
 // Task to format JavaScript files using Prettier
 gulp.task('format', () => {
   return gulp.src(['src/app/**/*.ts'])
+    .on('data', (file) => {
+      console.log('Formatting:', file.path);
+    })
     .pipe(prettier({}))
     .pipe(gulp.dest((file) => file.base));
 });

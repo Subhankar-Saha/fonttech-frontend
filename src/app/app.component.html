@@ -1,8 +1,11 @@
 <section class="min-h-screen">
-    <app-topbar></app-topbar>
-    <div class="mb-auto">
-      <router-outlet></router-outlet>
-      <ng-http-loader [spinner]="spinkit.skWave" [filteredHeaders]="['disableLoader']"></ng-http-loader>
-    </div>
+  <app-topbar></app-topbar>
+  <div class="mb-auto">
+    <router-outlet></router-outlet>
+    <ng-http-loader
+      [spinner]="spinkit.skWave"
+      [filteredHeaders]="['disableLoader']"
+    ></ng-http-loader>
+  </div>
   <app-footer class="sticky top-[100vh]"></app-footer>
 </section>

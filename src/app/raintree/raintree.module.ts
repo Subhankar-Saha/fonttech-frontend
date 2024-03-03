@@ -5,8 +5,16 @@ import { ScrollableTextDirective } from "./scrollable.directive";
 import { FixedSliderIndicatorsDirective } from "./sliderindicator.directive";
 
 @NgModule({
-  declarations: [SanitizationDirective, ScrollableTextDirective, FixedSliderIndicatorsDirective ],
+  declarations: [
+    SanitizationDirective,
+    ScrollableTextDirective,
+    FixedSliderIndicatorsDirective,
+  ],
   imports: [CommonModule],
-  exports: [SanitizationDirective, ScrollableTextDirective,FixedSliderIndicatorsDirective],
+  exports: [
+    SanitizationDirective,
+    ScrollableTextDirective,
+    FixedSliderIndicatorsDirective,
+  ],
 })
 export class RaintreeModule {}

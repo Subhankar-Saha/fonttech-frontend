@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
       large: "../../../assets/banner/tv1_2000.png",
       url: "",
       description: "",
-      headline : ""
+      headline: "",
     },
     {
       name: "Smart TV",
@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
       large: "../../../assets/banner/tv2_2000.png",
       url: "",
       description: "",
-      headline : ""
+      headline: "",
     },
   ];
 
