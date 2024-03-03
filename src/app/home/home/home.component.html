@@ -2,17 +2,33 @@
 <div class="content-bg p-4 min-h-screen">
   <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96" >
+    <div class="relative h-44 overflow-hidden rounded-lg md:h-96" >
       <div
         class="hidden duration-700 ease-in-out"
         data-carousel-item
         *ngFor="let item of imageBannerArr"
       >
-        <img
-          [src]="item" 
+        <!-- <img
+          [src]="item.large" 
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 responsive"
           alt="..."
-        />
+        /> -->
+
+        <picture>
+          <source [srcset]="item.large" media="(min-width: 1025px) and (max-width: 1440px)">
+          <source [srcset]="item.medium" media="(min-width: 900px) and (max-width: 1024px)">
+          <source [srcset]="item.small" media="(min-width: 640px) and (max-width: 899px)">
+          <source [srcset]="item.extraSmall" media="(min-width: 400px) and (max-width: 450px)">
+          <source [srcset]="item.ultraSmall" media="(min-width: 360px) and (max-width: 399px)">
+          <img
+            loading="auto"
+            [src]="item.large"
+            class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover"
+            style="height: auto !important; width: 100% ;"
+            alt="{{ item.name }}"
+          />
+        </picture>
+
       </div>
     </div>
     <!-- Slider indicators -->
@@ -85,12 +101,12 @@
   </div>
 
   <div class="flex flex-col px-6 py-6 mx-auto lg:py-4">
-    <h1 class="py-6 text-red-600 font-bold text-xl">
-      About <span class="py-6 text-red-600 text-2xl font-bold">FontTech</span>
+    <h1 class="py-6 font-bold text-xl header_gradient">
+      About <span class="text-2xl">FontTech</span>
     </h1>
     <p class="mb-4">
-      FontTech, a leading player in consumer electronics, offers a wide range of
-      top-quality products like TV, Home Theater, and Fan. With a commitment
+      <span class="text_gradient text-xl font-medium">FontTech</span>, a leading player in consumer electronics, offers a wide range of
+      top-quality products like  <span class="text_gradient">TV </span>,<span class="text_gradient">Home Theater</span>, <span class="text_gradient"> Fan</span>. With a commitment
       to innovation and excellence, FontTech has expanded its footprint with
       over 100 shops across India, providing customers nationwide with
       cutting-edge electronic solutions.
@@ -104,8 +120,8 @@
     </p>
   </div>
   <div class="flex flex-col px-6 py-6 mx-auto lg:py-4">
-    <h1 class="py-6 text-red-600 font-bold text-xl">
-      Our <span class="py-6 text-red-600 text-2xl font-bold">Products</span>
+    <h1 class="py-6 font-bold text-xl header_gradient">
+      Our <span class="text-2xl">Products</span>
     </h1>
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <div class="p-4" *ngFor="let item of productsArr">
@@ -119,7 +135,7 @@
               alt="{{ item.name }}"
             />
           </figure>
-          <h4 class="text-lg font-semibold text-red-700">{{ item.name }}</h4>
+          <h4 class="text-lg font-semibold text_gradient">{{ item.name }}</h4>
           <!-- <a
             href="#"
             class="inline-block bg-transparent text-red-500 px-6 py-3 rounded-full mt-2 transition duration-300 ease-in-out transform hover:bg-red-500 hover:text-white hover:border-transparent"

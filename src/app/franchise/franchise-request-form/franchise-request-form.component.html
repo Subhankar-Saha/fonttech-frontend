@@ -1,76 +1,76 @@
     <div class="flex ">
         <div class="text-center md:max-w-xl lg:max-w-3xl">
-          <h2 class="mb-12 text-3xl font-bold text-red-600">Franchise Request</h2>
+          <h2 class="mb-12 text-3xl font-bold text-red-600 header_gradient">Franchise Request</h2>
         </div>
       </div>
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
         <div
-            class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            class="w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white  ">
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl text_gradient">
                     Franchise Request Form
                 </h1>
                 <form [formGroup]="manualEntryForm" (ngSubmit)="onSubmit()" class="space-y-4 md:space-y-6" >
                     <div>
                         <label for="full_name"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name
+                            class="block mb-2 text-sm font-medium text-gray-900 ">Full Name
                             <span class="text-red-500">*</span></label>
                         <input inputSanitization [supportedCharaterRange]="'a-z A-Z0-9'" matInput type="text"
                             id="name"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                             placeholder="John Doe" formControlName="fullName" />
                     </div>
                     <div class="grid gap-6 mb-6 md:grid-cols-2">
                         <div>
                             <label for="phone"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mobile No <span
+                                class="block mb-2 text-sm font-medium text-gray-900 ">Mobile No <span
                                     class="text-red-500">*</span></label>
                             <input matInput type="text" inputSanitization [supportedCharaterRange]="'0-9'" id="phone"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="123456789" formControlName="mobileNo" />
                         </div>
             
                         
                         <div class="mb-6">
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Id
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Email Id
                                 <span class="text-red-500">*</span></label>
                             <input matInput type="email" id="email"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="john.doe@company.com" formControlName="emailId" />
                         </div>
                         <div>
                             <label for="state"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State
+                                class="block mb-2 text-sm font-medium text-gray-900 ">State
                                 <span class="text-red-500">*</span></label>
                             <input inputSanitization [supportedCharaterRange]="'a-zA-Z'" [convertToUppercase]="true" matInput type="text"
                                 id="state"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="Bihar" formControlName="state" />
                         </div>
                         <div>
                             <label for="state"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pin Code
+                                class="block mb-2 text-sm font-medium text-gray-900 ">Pin Code
                                 <span class="text-red-500">*</span></label>
                             <input inputSanitization [supportedCharaterRange]="'0-9'" matInput type="text"
                                 id="pincode"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="123456" formControlName="pincode" />
                         </div>
                     </div>
                     <div class="mb-6">
-                        <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Address
+                        <label for="address" class="block mb-2 text-sm font-medium text-gray-900 ">Full Address
                             <span class="text-red-500">*</span></label>
-                            <textarea id="address" inputSanitization formControlName="address" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Address"></textarea>
+                            <textarea id="address" inputSanitization formControlName="address" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Address"></textarea>
                     </div>
 
                     <div class="mb-6">
-                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Message <span class="text-red-500">*</span></label>
-                        <textarea id="message" formControlName="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">Your Message <span class="text-red-500">*</span></label>
+                        <textarea id="message" formControlName="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write your thoughts here..."></textarea>
 
                     </div>
 
                     <button type="submit"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">
                         Submit
                     </button>
                 </form>

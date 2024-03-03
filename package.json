@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "node src/app/home/home/banner_image.js && ng serve --o",
-    "build": "node src/app/home/home/banner_image.js && ng build && gulp",
-    "serve-dev": "node src/app/home/home/banner_image.js && ng serve --configuration=development",
-    "build-dev": "node src/app/home/home/banner_image.js && ng build --configuration=development && gulp",
+    "start": "ng serve --o",
+    "build": "gulp format && ng build && gulp gzip",
+    "serve-dev": "ng serve --configuration=development",
+    "build-dev": "gulp format && ng build && gulp gzip",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
