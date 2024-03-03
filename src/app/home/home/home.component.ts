@@ -45,8 +45,10 @@ export class HomeComponent implements OnInit {
       extraSmall: "../../../assets/banner/tv1_400.png",
       small: "../../../assets/banner/tv1_640.png",
       medium: "../../../assets/banner/tv1_1440.png",
-      large: "../../../assets/banner/tv1_1480.png",
+      large: "../../../assets/banner/tv1_2000.png",
       url: "",
+      description: "",
+      headline : ""
     },
     {
       name: "Smart TV",
@@ -54,8 +56,10 @@ export class HomeComponent implements OnInit {
       extraSmall: "../../../assets/banner/tv2_400.png",
       small: "../../../assets/banner/tv2_640.png",
       medium: "../../../assets/banner/tv2_1440.png",
-      large: "../../../assets/banner/tv2_1025.png",
+      large: "../../../assets/banner/tv2_2000.png",
       url: "",
+      description: "",
+      headline : ""
     },
   ];
 

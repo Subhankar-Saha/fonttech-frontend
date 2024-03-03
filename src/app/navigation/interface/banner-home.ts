@@ -6,6 +6,8 @@ export interface BannerArrayDetails {
   small: string;
   medium: string;
   large: string;
+  headline: string,
+  description: string
 }
 
 export interface ProductArrayDetails {
