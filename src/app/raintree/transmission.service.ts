@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { JWTService } from "../authentication/jwt.service";
 import { HttpErrorHandlerService } from "./http-error-handler.service";
 import { catchError } from "rxjs/operators";
