@@ -1,53 +1,37 @@
 <app-modal [content]="content" [header]="header" (confirmEvent)="onClickRedirect($event)" *ngIf="_modalService.modalState$ | async"></app-modal>
 <div class="content-bg p-4 min-h-screen">
-  <div id="default-carousel" class="relative w-full" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="relative h-44 overflow-hidden rounded-lg md:h-96" >
-      <div
-        class="hidden duration-700 ease-in-out"
-        data-carousel-item
-        *ngFor="let item of imageBannerArr"
-      >
-        <!-- <img
-          [src]="item.large" 
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 responsive"
-          alt="..."
-        /> -->
 
-        <picture>
-          <source [srcset]="item.large" media="(min-width: 1025px) and (max-width: 1440px)">
-          <source [srcset]="item.medium" media="(min-width: 900px) and (max-width: 1024px)">
-          <source [srcset]="item.small" media="(min-width: 640px) and (max-width: 899px)">
-          <source [srcset]="item.extraSmall" media="(min-width: 400px) and (max-width: 450px)">
-          <source [srcset]="item.ultraSmall" media="(min-width: 360px) and (max-width: 399px)">
-          <img
-            loading="auto"
-            [src]="item.large"
-            class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover"
-            style="height: auto !important; width: 100% ;"
-            alt="{{ item.name }}"
-          />
-        </picture>
-
-      </div>
-    </div>
-    <!-- Slider indicators -->
-    <div
-      class="absolute z-30 flex  bottom-5  space-x-3 rtl:space-x-reverse"
-      appFixedSliderIndicators
-    >
-      <div *ngFor="let item of imageBannerArr; let i = index">
-        <button
-          type="button"
-          class="w-3 h-3 rounded-full"
-          aria-current="true"
-          aria-label="Slide i"
-          data-carousel-slide-to="i"
-        ></button>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" [attr.data-interval]="carouselInterval" (mouseenter)="pauseCarousel()" (mouseleave)="resumeCarousel()">
+    <ol class="carousel-indicators">
+      <li *ngFor="let item of imageBannerArr; let i = index" [attr.data-target]="'#carouselExampleIndicators'" [attr.data-slide-to]="i" [class.active]="i === 0"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div *ngFor="let item of imageBannerArr; let i = index" class="carousel-item" [class.active]="i === 0">
+        <img class="d-block w-100" [src]="item.imageUrl" [alt]="'Slide ' + (i + 1)" (click)="handleCarouselItemClick(item)">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{ item.title }}</h5>
+          <p>{{ item.description }}</p>
+        </div>
       </div>
     </div>
   </div>
+  
+  <!-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" [attr.data-bs-pause]="hoverPause">
+    <div class="carousel-indicators">
+        <button *ngFor="let item of imageBannerArr; let i = index" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="i" [class]="item.lineClass" aria-current="true" aria-label="'Slide '+(i+1)"></button>
+    </div>
+    <div class="carousel-inner">
+        <div *ngFor="let item of imageBannerArr; let i = index;" [class] = "item.class" [attr.data-bs-interval]="carouselInterval">
+            <img class="d-block w-100" [src]="item.imageUrl" [alt]="'Slide '+(i + 1)" (click)="handleCarouselItemClick(item)">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>{{ item.title }}</h5>
+                <p>{{ item.description }}</p>
+            </div>
+        </div>
+    </div>
+</div> -->
 
+  
   <div class="flex flex-col px-6 py-6 mx-auto lg:py-4">
     <h1 class="py-6 font-bold text-xl header_gradient">
       About <span class="text-2xl">FontTech</span>

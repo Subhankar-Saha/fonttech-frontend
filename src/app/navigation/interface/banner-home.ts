@@ -1,13 +1,11 @@
 export interface BannerArrayDetails {
   name: string;
   url?: string;
-  ultraSmall: string;
-  extraSmall: string;
-  small: string;
-  medium: string;
-  large: string;
-  headline: string;
+  imageUrl:string;
+  title: string;
   description: string;
+  class : string;
+  lineClass: string;
 }
 
 export interface ProductArrayDetails {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { imageFileNames } from "./banner_image";
 import { Router } from "@angular/router";
 import { RequestMapperService } from "src/app/request-mapper.service";
@@ -20,46 +20,45 @@ export class HomeComponent implements OnInit {
   ) {}
   public content: string = `Explore thrilling franchise opportunities with FontTech. Join us in providing top-notch electronic solutions across India.`;
   public header: string = "Franchise Opportunities";
+  public carouselInterval:number = 3000;
+  public hoverPause :boolean = true;
+  @ViewChild('carousel') carousel!: ElementRef ;
   public productsArr: ProductArrayDetails[] = [
     {
       name: "Smart TV",
       description: "",
-      src: "../../../assets/images/smart-tv.jpg",
+      src: "../../../assets/images/smart-tv.jpg"
     },
     {
       name: "Home Theater",
       description: "",
-      src: "../../../assets/images/home-theater.png",
+      src: "../../../assets/images/home-theater.png"
     },
     {
       name: "Fan",
       description: "",
-      src: "../../../assets/images/ceiling-fan.png",
+      src: "../../../assets/images/ceiling-fan.png"
     },
   ];
 
   public imageBannerArr: BannerArrayDetails[] = [
     {
       name: "Smart TV",
-      ultraSmall: "../../../assets/banner/tv1_360.png",
-      extraSmall: "../../../assets/banner/tv1_400.png",
-      small: "../../../assets/banner/tv1_640.png",
-      medium: "../../../assets/banner/tv1_1440.png",
-      large: "../../../assets/banner/tv1_2000.png",
+      imageUrl : "../../../assets/banner/1.png",
       url: "",
       description: "",
-      headline: "",
+      title: "",
+      class: "carousel-item active",
+      lineClass : "active"
     },
     {
       name: "Smart TV",
-      ultraSmall: "../../../assets/banner/1_360.png",
-      extraSmall: "../../../assets/banner/1_400.png",
-      small: "../../../assets/banner/1_640.png",
-      medium: "../../../assets/banner/1_1440.png",
-      large: "../../../assets/banner/1_2000.png",
+      imageUrl : "../../../assets/banner/tv1.jpeg",
       url: "",
       description: "",
-      headline: "",
+      title: "",
+      lineClass : "active",
+      class: "carousel-item"
     },
   ];
 
@@ -76,5 +75,24 @@ export class HomeComponent implements OnInit {
 
   onClickRedirect(value: string) {
     this._router.navigateByUrl(`${RequestMapperService.FRANCHISE_URL}`);
+  }
+
+  handleCarouselItemClick(item: any) {
+    // Do something with the clicked item, for example, display an alert
+    console.log(`Clicked on item with title: ${item.title}`);
+  }
+
+  pauseCarousel() {
+    // Pause the carousel when the mouse enters
+    if (this.carousel && this.carousel.nativeElement) {
+      this.carousel.nativeElement.carousel('pause');
+    }
+  }
+
+  resumeCarousel() {
+    // Resume the carousel when the mouse leaves
+    if (this.carousel && this.carousel.nativeElement) {
+      this.carousel.nativeElement.carousel('cycle');
+    }
   }
 }
