@@ -20,45 +20,45 @@ export class HomeComponent implements OnInit {
   ) {}
   public content: string = `Explore thrilling franchise opportunities with FontTech. Join us in providing top-notch electronic solutions across India.`;
   public header: string = "Franchise Opportunities";
-  public carouselInterval:number = 3000;
-  public hoverPause :boolean = true;
-  @ViewChild('carousel') carousel!: ElementRef ;
+  public carouselInterval: number = 3000;
+  public hoverPause: boolean = true;
+  @ViewChild("carousel") carousel!: ElementRef;
   public productsArr: ProductArrayDetails[] = [
     {
       name: "Smart TV",
       description: "",
-      src: "../../../assets/images/smart-tv.jpg"
+      src: "../../../assets/images/smart-tv.jpg",
     },
     {
       name: "Home Theater",
       description: "",
-      src: "../../../assets/images/home-theater.png"
+      src: "../../../assets/images/home-theater.png",
     },
     {
       name: "Fan",
       description: "",
-      src: "../../../assets/images/ceiling-fan.png"
+      src: "../../../assets/images/ceiling-fan.png",
     },
   ];
 
   public imageBannerArr: BannerArrayDetails[] = [
     {
       name: "Smart TV",
-      imageUrl : "../../../assets/banner/1.png",
+      imageUrl: "../../../assets/banner/1.png",
       url: "",
       description: "",
       title: "",
       class: "carousel-item active",
-      lineClass : "active"
+      lineClass: "active",
     },
     {
       name: "Smart TV",
-      imageUrl : "../../../assets/banner/tv1.jpeg",
+      imageUrl: "../../../assets/banner/tv1.jpeg",
       url: "",
       description: "",
       title: "",
-      lineClass : "active",
-      class: "carousel-item"
+      lineClass: "active",
+      class: "carousel-item",
     },
   ];
 
@@ -85,14 +85,14 @@ export class HomeComponent implements OnInit {
   pauseCarousel() {
     // Pause the carousel when the mouse enters
     if (this.carousel && this.carousel.nativeElement) {
-      this.carousel.nativeElement.carousel('pause');
+      this.carousel.nativeElement.carousel("pause");
     }
   }
 
   resumeCarousel() {
     // Resume the carousel when the mouse leaves
     if (this.carousel && this.carousel.nativeElement) {
-      this.carousel.nativeElement.carousel('cycle');
+      this.carousel.nativeElement.carousel("cycle");
     }
   }
 }

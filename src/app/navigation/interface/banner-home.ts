@@ -1,10 +1,10 @@
 export interface BannerArrayDetails {
   name: string;
   url?: string;
-  imageUrl:string;
+  imageUrl: string;
   title: string;
   description: string;
-  class : string;
+  class: string;
   lineClass: string;
 }
 
