@@ -436,6 +436,38 @@ button.mfp-close i{
 .term ul li a:hover{
     text-decoration: underline;
 }
+@media only screen and (max-width: 1100px) and (min-width: 768px)  {
+    .nav-item .nav-link{
+        padding: 1rem;
+        font-size: 1.4rem;
+    }
+    .brand{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 12rem;
+    }
+
+}
+
+
+@media only screen and (max-width: 767px) {
+    .newsletter-popup{
+        width: 94%;
+    }
+    .product-sec{
+        flex-direction: column;
+    }
+    .product{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .lft-circle {
+        left: -10%;
+        top: inherit;
+        bottom: -10%;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .nav-item .nav-link{
         padding-left: 0;
@@ -453,5 +485,27 @@ button.mfp-close i{
     }
     .heading-02{
         font-size: 3rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .footMenu ul{
+        flex-direction: column;
+    }
+    .footMenu ul li a{
+        display: block;
+        clear: both;
+        width: 100%;
+        text-align: center;
+    }
+    .footBrand{
+        margin-bottom: 3rem;
+    }
+    .copy-term{
+        flex-direction: column;
+
+    }
+    .term{
+        margin-top: 4rem;
+
     }
 }
