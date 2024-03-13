@@ -1,6 +1,6 @@
 <app-modal [content]="content" [header]="header" (confirmEvent)="onClickRedirect($event)" *ngIf="_modalService.modalState$ | async"></app-modal>
 <div class="content-bg min-h-screen">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" [attr.data-interval]="carouselInterval" (mouseenter)="pauseCarousel()" (mouseleave)="resumeCarousel()">
+  <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" [attr.data-interval]="carouselInterval" (mouseenter)="pauseCarousel()" (mouseleave)="resumeCarousel()">
     <ol class="carousel-indicators">
       <li *ngFor="let item of imageBannerArr; let i = index" [attr.data-target]="'#carouselExampleIndicators'" [attr.data-slide-to]="i" [class.active]="i === 0"></li>
     </ol>
@@ -13,9 +13,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
-  <!-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" [attr.data-bs-pause]="hoverPause">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" [attr.data-bs-pause]="hoverPause">
     <div class="carousel-indicators">
         <button *ngFor="let item of imageBannerArr; let i = index" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="i" [class]="item.lineClass" aria-current="true" aria-label="'Slide '+(i+1)"></button>
     </div>
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 <section class="white-bg pr pt-15 pb-15">
   <div class="container pr-z2">
     <div class="row">
