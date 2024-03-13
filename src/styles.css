@@ -436,6 +436,189 @@ button.mfp-close i{
 .term ul li a:hover{
     text-decoration: underline;
 }
+
+.lftTab{
+    position: relative;    
+    border-radius: 14px;    
+    box-shadow: 0px 0px 60px 0px rgba(2, 2, 2, 0.07);
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background-color:#bbf5ea;
+}
+.bgImg{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    opacity: 0.6;
+}
+.lftTab li{
+    position: relative;
+    z-index: 99;
+}
+.lftTab li a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2a254d;
+    text-decoration: none;
+    padding:20px;    
+    border-bottom: 1px dashed #2a254d;
+    text-transform: uppercase;
+}
+.lftTab li a:hover{
+    background-color:#6baaf1;
+    color: #000;
+}
+.lftTab li.active a{
+    background-color:#6baaf1;
+    color: #000;
+}
+.lftTab li:last-child a{
+    border-bottom: 0;
+}
+.rgtContent{
+    padding-left: 2rem;
+}
+.rgtContent .heading-02{
+    position: relative;
+    margin-bottom: 25px;
+}
+.rgt-prag p{
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    line-height: 32px;
+}
+.franchiseList{
+    list-style: circle;
+    padding: 0 0 0 30px;
+}
+.franchiseList li{
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    line-height: 32px;
+}
+
+.page-header {
+    background-color:#2a254d;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(assets/images/page-header-bg-1-1.jpg);
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+}
+.page-header__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.page-header .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 166px;
+    padding-bottom: 151px;
+}
+.page-header__title {
+    margin: 0;
+    font-size: 50px;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.rgt-prag .table-view{
+    border: 1px solid #666 !important;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.rgt-prag .table-view .table{
+    width: 100%;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.rgt-prag .table-view .table tr{
+    border: 0 !important;
+}
+.rgt-prag .table-view .table tr th{
+    font-size: 18px;
+    padding: 5px 10px !important;
+    font-weight: 500;
+    border-bottom: 1px solid #666 !important;
+    border-right: 1px solid #666 !important;
+    background-color:#bbf5ea;
+}
+.rgt-prag .table-view .table tr td{
+    font-size: 14px;
+    line-height: 20px;
+    padding: 5px 10px !important;
+    font-weight: 300;
+    border-bottom: 1px solid #666 !important;
+    border-right: 1px solid #666 !important;
+    background-color:#bbf5ea;
+}
+.rgt-prag .table-view .table tr:nth-child(odd) td{
+    background-color:#ffffff;
+  }
+  
+  .rgt-prag .table-view .table tr:nth-child(even) td{
+    background-color:#f5f2f2;
+  }
+.rgt-prag .table-view .table tr:hover td{
+    background-color: #cbc8fd !important;
+}
+.rgt-prag .table-view .table tr:last-child td{
+    border-bottom: 0 !important;
+}
+.form-group{
+    margin-bottom: 2rem;
+}
+.form-group label{
+    font-weight: 500;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+.form-group .form-control{
+    height: 40px;
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+}
+.form-group textarea.form-control{
+    height: 140px;
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+}
+.btn{
+    font-size: 1.6rem;
+    padding: 1.2rem 2.5rem;
+    border-radius: 0.5rem;
+}
+a{
+    font-size: 1.6rem;
+}
+a:hover{
+    text-decoration: none;
+}
+
 @media only screen and (max-width: 1100px) and (min-width: 768px)  {
     .nav-item .nav-link{
         padding: 1rem;

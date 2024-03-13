@@ -1,23 +1,83 @@
-<div class="content-bg p-4">
-    <div class="flex franchiseContent content-bg flex-col md:flex-row">
-        <div class="columnLeft p-2 w-full md:w-20">
-            <ul>
-                <li [class.active]="contentType === 'OVERVIEW' || contentType === '' " (click)='onclick("OVERVIEW")'><a class="cursor-pointer"><span class="icon01"></span><br>OVERVIEW</a></li>
-                <!-- <li [class.active]="contentType === 'PARTNERSHIP_OPPORTUNITIES'" (click)='onclick("PARTNERSHIP_OPPORTUNITIES")'><a class="cursor-pointer"><span class="icon02"></span><br>PARTNERSHIP OPPORTUNITIES</a></li>
-                <li [class.active]="contentType === 'BUSINESS_PARTNER'" (click)='onclick("BUSINESS_PARTNER")'><a class="cursor-pointer" ><span class="icon03"></span><br>PREFERRED BUSINESS PARTNER PROFILE</a></li> -->
-                <li [class.active]="contentType === 'BUSINESS_PROPOSAL'" (click)='onclick("BUSINESS_PROPOSAL")'><a class="cursor-pointer" ><span class="icon04"></span><br>BUSINESS PROPOSAL</a></li>
-                <li [class.active]="contentType === 'FRANCHISE_REQUEST'" (click)='onclick("FRANCHISE_REQUEST")' ><a class="cursor-pointer" ><span class="icon04"></span><br>Franchise Request</a></li>
-                <li [class.active]="contentType === 'CONTACT'" (click)='onclick("CONTACT")' ><a class="cursor-pointer" ><span class="icon04"></span><br>CONTACT US</a></li>
-            </ul>
-        </div>
-        <div class="columnRight p-2 w-full md:w-79">
-            <app-franchise-overview-content *ngIf ="contentType === 'OVERVIEW' || contentType === '' "></app-franchise-overview-content>
-            <!-- <app-franchise-partnership-content *ngIf ="contentType === 'PARTNERSHIP_OPPORTUNITIES' "></app-franchise-partnership-content>
-            <app-franchise-business-partner-content *ngIf ="contentType === 'BUSINESS_PARTNER' "></app-franchise-business-partner-content> -->
-            <app-franchise-business-proposal-content *ngIf ="contentType === 'BUSINESS_PROPOSAL' "></app-franchise-business-proposal-content>
-            <app-franchise *ngIf ="contentType === 'FRANCHISE_REQUEST' "></app-franchise>
-            <app-franchise-contact *ngIf ="contentType === 'CONTACT' "></app-franchise-contact>
-        </div>
+<section class="page-header">
+    <div class="page-header__overlay"></div>
+    <div class="container text-center">
+        <h2 class="page-header__title">Franchise</h2>
     </div>
-</div>
+</section>
+
+
+<section class="pt-15 pb-15">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <ul class="lftTab">
+                    <div class="bgImg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 452 341" fill="none">
+                            <path d="M-3 0.729858C66.0958 55.5037 149.949 88.4404 237.852 95.334L374.567 106.055C418.278 109.483 452 145.953 452 189.798V351.73H-3V0.729858Z" fill="url(#paint0_linear_214_20)"></path>
+                            <defs>
+                                <linearGradient id="paint0_linear_214_20" x1="99.2396" y1="17.183" x2="271.488" y2="365.14" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FF7200" stop-opacity="0.71"></stop>
+                                    <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <li [class.active]="contentType === 'OVERVIEW' || contentType === '' " (click)='onclick("OVERVIEW")'>
+                        <a class="cursor-pointer">
+                            OVERVIEW 
+                            <i class="over-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                </svg>
+                            </i>
+                        </a>
+                    </li>
+                    <!-- <li [class.active]="contentType === 'PARTNERSHIP_OPPORTUNITIES'" (click)='onclick("PARTNERSHIP_OPPORTUNITIES")'><a class="cursor-pointer"><span class="icon02"></span><br>PARTNERSHIP OPPORTUNITIES</a></li>
+                    <li [class.active]="contentType === 'BUSINESS_PARTNER'" (click)='onclick("BUSINESS_PARTNER")'><a class="cursor-pointer" ><span class="icon03"></span><br>PREFERRED BUSINESS PARTNER PROFILE</a></li> -->
+                    <li [class.active]="contentType === 'BUSINESS_PROPOSAL'" (click)='onclick("BUSINESS_PROPOSAL")'>
+                        <a class="cursor-pointer" >
+                            BUSINESS PROPOSAL
+                            <i class="over-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                </svg>
+                            </i>
+                        </a>
+                    </li>
+                    <li [class.active]="contentType === 'FRANCHISE_REQUEST'" (click)='onclick("FRANCHISE_REQUEST")' >
+                        <a class="cursor-pointer" >
+                            Franchise Request
+                            <i class="over-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                </svg>
+                            </i>
+                        </a>
+                    </li>
+                    <li [class.active]="contentType === 'CONTACT'" (click)='onclick("CONTACT")' >
+                        <a class="cursor-pointer">
+                            CONTACT US
+                            <i class="over-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                </svg>
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-9">
+                <div class="rgtTab">
+                    <app-franchise-overview-content *ngIf ="contentType === 'OVERVIEW' || contentType === '' "></app-franchise-overview-content>
+                    <!-- <app-franchise-partnership-content *ngIf ="contentType === 'PARTNERSHIP_OPPORTUNITIES' "></app-franchise-partnership-content>
+                    <app-franchise-business-partner-content *ngIf ="contentType === 'BUSINESS_PARTNER' "></app-franchise-business-partner-content> -->
+                    <app-franchise-business-proposal-content *ngIf ="contentType === 'BUSINESS_PROPOSAL' "></app-franchise-business-proposal-content>
+                    <app-franchise *ngIf ="contentType === 'FRANCHISE_REQUEST' "></app-franchise>
+                    <app-franchise-contact *ngIf ="contentType === 'CONTACT' "></app-franchise-contact>
+                </div> 
+            </div>
+        </div>
+        
+    </div>
+</section>
 
