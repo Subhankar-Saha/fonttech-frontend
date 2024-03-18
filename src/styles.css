@@ -312,13 +312,13 @@ button.mfp-close i{
 }
 .product{   
     text-align: center;
-    padding: 4rem ;
+    padding: 4rem 2rem ;
     display: grid;
     place-items: center;
     background-color: var(--awa-white-color);
     border-radius: 0.8rem;
     border: 1px solid #ccc;
-    width: 30%;
+    width: 32%;
 }
 .product-name{
     font-size: 3.5rem;
