@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit {
     sessionStorage.setItem("banner", "true");
   }
 
-  onClickRedirect(value: string) {
+  onClickRedirect() {
     this._router.navigateByUrl(`${RequestMapperService.FRANCHISE_URL}`);
   }
 
