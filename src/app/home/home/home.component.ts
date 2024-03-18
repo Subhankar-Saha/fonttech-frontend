@@ -30,12 +30,12 @@ export class HomeComponent implements OnInit {
       src: "../../../assets/images/smart-tv.jpg",
     },
     {
-      name: "Home Theater",
+      name: "Fan",
       description: "",
       src: "../../../assets/images/fan.jpg",
     },
     {
-      name: "Fan",
+      name: "Home Theater",
       description: "",
       src: "../../../assets/images/home-th.jpg",
     },
