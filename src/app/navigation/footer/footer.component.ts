@@ -19,12 +19,10 @@ export class FooterComponent implements OnInit {
       this._router.navigate([RequestMapperService.TERM_URL]);
     } else if (value === "CONTACT") {
       this._router.navigate([RequestMapperService.CONTACT_URL]);
-    }
-    else  if (value === 'HOME'){
-      this._router.navigate([RequestMapperService.HOME])
-    }
-    else  if (value === 'FRANCHISE'){
-      this._router.navigate([RequestMapperService.FRANCHISE_URL])
+    } else if (value === "HOME") {
+      this._router.navigate([RequestMapperService.HOME]);
+    } else if (value === "FRANCHISE") {
+      this._router.navigate([RequestMapperService.FRANCHISE_URL]);
     }
   }
 }
