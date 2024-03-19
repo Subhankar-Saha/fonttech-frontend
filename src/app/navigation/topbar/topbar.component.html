@@ -20,7 +20,7 @@
 				<img src="../../../assets/images/fonttech final.png">
 			</a>
 		</div>
-		<div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
+		<div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" (click)="collapseMenu()">
 			<ul class="flex flex-col  font-medium md:flex-row md:space-x-8 md:mt-0 mb-0" *ngFor="let item of menuArr;">
 				<!-- <li class="nav-item">
 					<a [routerLink]="item.link" class="nav-link">
@@ -64,7 +64,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="hidden justify-between items-center md:hidden w-full md:w-auto md:order-1" id="mobile-menu-2">
+	<div class="hidden justify-between items-center md:hidden w-full md:w-auto md:order-1" id="mobile-menu-2"  (click)="collapseMenu()">
 		<ul class="flex flex-col font-medium md:flex-row md:space-x-8 md:mt-0" *ngFor="let item of menuArr;">
 			<!-- <li class="nav-item">
 				<a [routerLink]="item.link" class="nav-link">

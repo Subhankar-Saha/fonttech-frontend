@@ -113,6 +113,13 @@ export class TopbarComponent {
     this._snack.info("Registered Users can only do");
   }
 
+  public collapseMenu() {
+    var mobileMenu = document.getElementById('mobile-menu-2');
+    if (mobileMenu) {
+        mobileMenu.classList.add('hidden');
+    }
+}
+
   public async modalStopPropagation(event: Event) {
     const modalState = await firstValueFrom(this._modalService.modalState$);
     if (modalState) {
