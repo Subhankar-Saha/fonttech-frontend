@@ -17,10 +17,10 @@
   
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" [attr.data-bs-pause]="hoverPause">
     <div class="carousel-indicators">
-        <button *ngFor="let item of imageBannerArr; let i = index" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="i" [class]="item.lineClass" aria-current="true" aria-label="'Slide '+(i+1)"></button>
+        <button *ngFor="let item of imageBannerArr; let i = index" type="button" [attr.data-bs-target]="'#carouselExampleAutoplaying'" [attr.data-bs-slide-to]="i" [class]="item.lineClass" [attr.aria-current]="i === 0 ? 'true' : 'false'" aria-label="'Slide '+(i+1)"></button>
     </div>
     <div class="carousel-inner">
-        <div *ngFor="let item of imageBannerArr; let i = index;" [class] = "item.class" [attr.data-bs-interval]="carouselInterval">
+        <div *ngFor="let item of imageBannerArr; let i = index;" [class]="item.class" [attr.data-bs-interval]="carouselInterval">
             <img class="d-block w-100" [src]="item.imageUrl" [alt]="'Slide '+(i + 1)" (click)="handleCarouselItemClick(item)">
             <div class="carousel-caption d-none d-md-block">
                 <h5>{{ item.title }}</h5>

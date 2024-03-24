@@ -114,11 +114,11 @@ export class TopbarComponent {
   }
 
   public collapseMenu() {
-    var mobileMenu = document.getElementById('mobile-menu-2');
+    var mobileMenu = document.getElementById("mobile-menu-2");
     if (mobileMenu) {
-        mobileMenu.classList.add('hidden');
+      mobileMenu.classList.add("hidden");
     }
-}
+  }
 
   public async modalStopPropagation(event: Event) {
     const modalState = await firstValueFrom(this._modalService.modalState$);

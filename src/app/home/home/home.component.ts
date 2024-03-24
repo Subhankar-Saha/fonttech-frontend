@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
   public imageBannerArr: BannerArrayDetails[] = [
     {
       name: "Smart TV",
-      imageUrl: "../../../assets/banner/1.png",
+      imageUrl: "../../../assets/banner/2.png",
       url: "",
       description: "",
       title: "",
