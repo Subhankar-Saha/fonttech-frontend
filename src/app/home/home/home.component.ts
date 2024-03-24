@@ -27,17 +27,17 @@ export class HomeComponent implements OnInit {
     {
       name: "Smart TV",
       description: "",
-      src: "../../../assets/images/smart-tv.jpg",
+      src: "../../../assets/images/television.png",
     },
     {
       name: "Fan",
       description: "",
-      src: "../../../assets/images/fan.jpg",
+      src: "../../../assets/images/ceiling-fan.png",
     },
     {
       name: "Home Theater",
       description: "",
-      src: "../../../assets/images/home-th.jpg",
+      src: "../../../assets/images/home-theater.png",
     },
   ];
 
