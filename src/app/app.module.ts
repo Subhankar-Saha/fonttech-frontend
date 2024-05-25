@@ -10,6 +10,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { NgHttpLoaderModule } from "ng-http-loader";
 import { ReactiveFormsModule } from "@angular/forms";
 import "hammerjs";
+import { GoogleTagManagerModule } from "angular-google-tag-manager";
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,8 +24,11 @@ import "hammerjs";
     NgHttpLoaderModule.forRoot(),
     ReactiveFormsModule,
     HammerModule,
+    GoogleTagManagerModule.forRoot({
+      id: "G-LWCBQGDQKT",
+    }),
   ],
-  providers: [],
+  providers: [{ provide: "googleTagManagerId", useValue: "G-LWCBQGDQKT" }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
