@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
 
   public imageBannerArr: BannerArrayDetails[] = [
     {
-      name: "Smart TV",
+      name: "",
       imageUrl: "../../../assets/banner/2.png",
       url: "",
       description: "",
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
       lineClass: "active",
     },
     {
-      name: "Smart TV",
+      name: "",
       imageUrl: "../../../assets/banner/tv1.jpeg",
       url: "",
       description: "",
@@ -60,6 +60,24 @@ export class HomeComponent implements OnInit {
       lineClass: "active",
       class: "carousel-item",
     },
+    {
+      name: "",
+      imageUrl: "../../../assets/banner/Product Banner.png",
+      url: "",
+      description: "",
+      title: "",
+      lineClass: "active",
+      class: "carousel-item",
+    },
+    {
+      name: "",
+      imageUrl: "../../../assets/banner/Franchise Banner.png",
+      url: "",
+      description: "",
+      title: "",
+      lineClass: "active",
+      class: "carousel-item",
+    }
   ];
 
   ngOnInit(): void {

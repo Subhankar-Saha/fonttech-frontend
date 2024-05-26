@@ -202,6 +202,10 @@ button.mfp-close i{
     font-size: 20px;
 }
 
+.mt-20{
+    margin-top: 20rem;
+}
+
 /*Nav Bar */
 
 .nav-item .nav-link{
