@@ -7,6 +7,7 @@ import {
   BannerArrayDetails,
   ProductArrayDetails,
 } from "src/app/navigation/interface/banner-home";
+import {UtilityService} from "src/app/utility.service"
 
 @Component({
   selector: "app-home",
@@ -17,9 +18,10 @@ export class HomeComponent implements OnInit {
   constructor(
     private _router: Router,
     public _modalService: ModalService,
+    public _utilityService :UtilityService
   ) {}
-  public content: string = `Explore thrilling franchise opportunities with FontTech. Join us in providing top-notch electronic solutions across India.`;
-  public header: string = "Franchise Opportunities";
+  public content: string = ""; // `Explore thrilling franchise opportunities with FontTech. Join us in providing top-notch electronic solutions across India.`;
+  public header: string = ""; // "Franchise Opportunities";
   public carouselInterval: number = 3000;
   public hoverPause: boolean = true;
   @ViewChild("carousel") carousel!: ElementRef;
@@ -41,46 +43,17 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  public imageBannerArr: BannerArrayDetails[] = [
-    {
-      name: "",
-      imageUrl: "../../../assets/banner/2.png",
-      url: "",
-      description: "",
-      title: "",
-      class: "carousel-item active",
-      lineClass: "active",
-    },
-    {
-      name: "",
-      imageUrl: "../../../assets/banner/tv1.jpeg",
-      url: "",
-      description: "",
-      title: "",
-      lineClass: "active",
-      class: "carousel-item",
-    },
-    {
-      name: "",
-      imageUrl: "../../../assets/banner/Product Banner.png",
-      url: "",
-      description: "",
-      title: "",
-      lineClass: "active",
-      class: "carousel-item",
-    },
-    {
-      name: "",
-      imageUrl: "../../../assets/banner/Franchise Banner.png",
-      url: "",
-      description: "",
-      title: "",
-      lineClass: "active",
-      class: "carousel-item",
-    }
-  ];
+  public imageBannerArr: BannerArrayDetails[] = []
 
   ngOnInit(): void {
+    this._utilityService.getBanners().subscribe(
+      (data: BannerArrayDetails[]) => {
+        this.imageBannerArr = data;
+      },
+      error => {
+        console.error('Error fetching banner data', error);
+      }
+    );
     if (!sessionStorage.getItem("banner")) {
       this.showFranchiseModalWithAnimation();
     }

@@ -1,0 +1,29 @@
+[
+    {
+      "name": "",
+      "imageUrl": "../../../assets/banner/2.png",
+      "url": "",
+      "description": "",
+      "title": "",
+      "class": "carousel-item active",
+      "lineClass": "active"
+    },
+    {
+      "name": "",
+      "imageUrl": "../../../assets/banner/Product Banner.png",
+      "url": "",
+      "description": "",
+      "title": "",
+      "lineClass": "active",
+      "class": "carousel-item"
+    },
+    {
+      "name": "",
+      "imageUrl": "../../../assets/banner/Franchise Banner.png",
+      "url": "",
+      "description": "",
+      "title": "",
+      "lineClass": "active",
+      "class": "carousel-item"
+    }
+  ]

@@ -22,3 +22,27 @@ table tr{
 table td , table th{
     @apply p-2
 }
+
+.rgt-prag p, .rgt-prag  li{
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    line-height: 32px;
+}
+
+.custom-list {
+    list-style: none;
+    padding: 0;
+  }
+  .custom-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+  }
+  .custom-list li::before {
+    content: "✔"; /* Custom marker symbol */
+    color: green;  /* Marker color */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
