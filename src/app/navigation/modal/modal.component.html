@@ -2,21 +2,16 @@
   class="inset-0 flex overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
   <div class="modal-overlay fixed inset-0 bg-black opacity-50" ></div>
   <div class="mfp-content">
-      <div class="newsletter-popup bg-img" id="newsletter-popup-form" 
-      style="
-      height: 36rem; 
-      background-color: #f1f1f1;
-      background-image : url('../../../assets/images/Fronttech\ Franchise\ Banner\ crop.png');
-      background-repeat: no-repeat; 
-      background-size: contain;
-      background-position: center;
-     ">
+      <div class="newsletter-popup bg-img" id="newsletter-popup-form">
         <div class="newsletter-popup-content">
             <!-- <img src="../../../assets/images/read-fonttech-final.png" width="160" alt="Logo" class="logo-newsletter"> -->
-            <h2>{{header}} </h2>
-            <p>{{content}}</p>
+            <!-- <h2>{{header}} </h2>
+            <p>{{content}}</p> -->
+            <div class="MainOpen-popup">
+                <img src="../../../assets/images/FronttechFranchiseBanner.png" alt="Information">
+            </div>
             <div class="newsletter-subscribe">
-                <div class="custom-control pl-0 mt-20">
+                <div class="custom-control pl-0 text-center">
                     <button class="btn btn-primary px-4 btn-lg" (click)="onClick()"><i class="bi bi-person-check"></i> Visit</button>
                 </div>
             </div> 
