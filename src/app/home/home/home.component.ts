@@ -61,11 +61,12 @@ export class HomeComponent implements OnInit {
 
   showFranchiseModalWithAnimation() {
     this._modalService.openModal();
-    sessionStorage.setItem("banner", "true");
+    // sessionStorage.setItem("banner", "true");
   }
 
   onClickRedirect(value: string) {
     this._router.navigateByUrl(`${RequestMapperService.FRANCHISE_URL}`);
+    
   }
 
   handleCarouselItemClick(item: any) {

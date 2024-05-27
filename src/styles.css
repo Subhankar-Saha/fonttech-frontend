@@ -132,7 +132,7 @@ app-root {
     width: 740px;
     margin-right: auto;
     margin-left: auto;
-    padding: 64px 40px;
+    padding: 40px 40px;
     border-radius: 0;
     box-shadow: 0 0 50px rgba(0,0,0,0.12);
     background-position: right !important;
@@ -143,8 +143,11 @@ app-root {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.newsletter-popup-content {
+/* .newsletter-popup-content {
     max-width: 357px;
+} */
+.newsletter-popup-content {
+    max-width: 100%;
 }
 .logo-newsletter {
     display: inline-block;
@@ -640,7 +643,12 @@ a:hover{
 .get-inTouch button:hover{
     background-color: var(--awa-text-color);
 }
-
+.MainOpen-popup{
+    width: 100%;
+}
+.newsletter-popup{
+    background-color: #fff;
+}
 @media only screen and (max-width: 1100px) and (min-width: 768px)  {
     .nav-item .nav-link{
         padding: 1rem;
@@ -656,8 +664,9 @@ a:hover{
 
 
 @media only screen and (max-width: 767px) {
-    .newsletter-popup{
-        width: 94%;
+    .newsletter-popup {
+        width: 350px;
+        padding: 20px;
     }
     .product-sec{
         flex-direction: column;
