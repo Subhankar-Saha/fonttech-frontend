@@ -132,7 +132,7 @@ app-root {
     width: 740px;
     margin-right: auto;
     margin-left: auto;
-    padding: 40px 40px;
+    padding:0 0 20px 0;
     border-radius: 0;
     box-shadow: 0 0 50px rgba(0,0,0,0.12);
     background-position: right !important;
@@ -201,8 +201,9 @@ button.mfp-close i{
 .modal-overlay{
     z-index: 1 !important;
 }
-.custom-control .btn i{
-    font-size: 20px;
+.custom-control .btn i {
+    font-size: 1.6rem;
+    margin-right: 0.3rem;
 }
 
 .mt-20{
@@ -616,7 +617,7 @@ button.mfp-close i{
 }
 .btn{
     font-size: 1.6rem;
-    padding: 1.2rem 2.5rem;
+    padding: 0.8rem 3rem;
     border-radius: 0.5rem;
 }
 a, p{
@@ -665,7 +666,7 @@ a:hover{
 
 @media only screen and (max-width: 767px) {
     .newsletter-popup {
-        width: 350px;
+        width: 360px;
         padding: 20px;
     }
     .product-sec{
@@ -699,6 +700,14 @@ a:hover{
     }
     .heading-02{
         font-size: 3rem;
+    }
+    .brand {
+        width: 12rem;
+    }
+    .btn {
+        font-size: 1.3rem;
+        padding: 0.7rem 2rem;
+        border-radius: 0.5rem;
     }
 }
 @media only screen and (max-width: 500px) {
