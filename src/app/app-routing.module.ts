@@ -13,13 +13,9 @@ const routes: Routes = [
   {
     path: RequestMapperService.BASE_RELATIVE_URL,
     redirectTo: RequestMapperService.getAbsoluteUrl(
-      RequestMapperService.BASE_RELATIVE_URL,
+      RequestMapperService.HOME,
     ),
     pathMatch: "full",
-  },
-  {
-    path: RequestMapperService.BASE_RELATIVE_URL,
-    component: HomeComponent,
   },
   {
     path: RequestMapperService.HOME,

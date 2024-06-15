@@ -109,10 +109,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "local": {
-							"browserTarget": "fonttech-frontend:build:local"
+              "buildTarget": "fonttech-frontend:build:local"
 						},
-						"development": {
-							"browserTarget": "fonttech-frontend:build:development"
+            "development": {
+              "buildTarget": "fonttech-frontend:build:development"
 						}
           },
           "defaultConfiguration": "local"
@@ -120,7 +120,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fonttech-frontend:build"
+            "buildTarget": "fonttech-frontend:build"
           }
         },
         "test": {
