@@ -7,7 +7,7 @@ import {
   BannerArrayDetails,
   ProductArrayDetails,
 } from "src/app/navigation/interface/banner-home";
-import {UtilityService} from "src/app/utility.service"
+import { UtilityService } from "src/app/utility.service";
 
 @Component({
   selector: "app-home",
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private _router: Router,
     public _modalService: ModalService,
-    public _utilityService :UtilityService
+    public _utilityService: UtilityService,
   ) {}
   public content: string = ""; // `Explore thrilling franchise opportunities with FontTech. Join us in providing top-notch electronic solutions across India.`;
   public header: string = ""; // "Franchise Opportunities";
@@ -43,16 +43,16 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  public imageBannerArr: BannerArrayDetails[] = []
+  public imageBannerArr: BannerArrayDetails[] = [];
 
   ngOnInit(): void {
     this._utilityService.getBanners().subscribe(
       (data: BannerArrayDetails[]) => {
         this.imageBannerArr = data;
       },
-      error => {
-        console.error('Error fetching banner data', error);
-      }
+      (error) => {
+        console.error("Error fetching banner data", error);
+      },
     );
     if (!sessionStorage.getItem("banner")) {
       this.showFranchiseModalWithAnimation();
@@ -66,7 +66,6 @@ export class HomeComponent implements OnInit {
 
   onClickRedirect(value: string) {
     this._router.navigateByUrl(`${RequestMapperService.FRANCHISE_URL}`);
-    
   }
 
   handleCarouselItemClick(item: any) {

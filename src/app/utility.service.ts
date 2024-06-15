@@ -10,7 +10,7 @@ import { HttpClient } from "@angular/common/http";
 export class UtilityService {
   constructor(private http: HttpClient) {}
 
-  private jsonUrl = '../../assets/banner.json'; // Path to your JSON file
+  private jsonUrl = "../../assets/banner.json"; // Path to your JSON file
 
   public getUniqueUUID(): string {
     return uuidv4();
