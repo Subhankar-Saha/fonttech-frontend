@@ -31,7 +31,7 @@ jobs:
           find . -type f -name "*.js.gz" -exec sh -c 'mv "$0" "${0%.gz}"' {} \;
 
       - name: Deploy to cPanel
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
