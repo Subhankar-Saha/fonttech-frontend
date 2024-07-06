@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --o",
-    "build": "gulp format && ng build && gulp gzip",
+    "build": "ng build",
     "serve-dev": "ng serve --configuration=development",
     "build-dev": "gulp format && ng build && gulp gzip", 
     "watch": "ng build --watch --configuration development",
