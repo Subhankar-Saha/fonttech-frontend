@@ -29,6 +29,7 @@ jobs:
       - name: Build project
         run: npm run build-dev
       - name: FTP Deploy
+        id: ftp-deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: '${{ secrets.FTP_SERVER }}'
@@ -37,3 +38,8 @@ jobs:
           port: '${{ secrets.FTP_PORT }}'
           local-dir: ./dist/
           server-dir: /
+      - name: Check FTP deployment status
+        if: '${{ failure() }}'
+        run: |
+          echo "FTP deployment failed. Checking if any files caused issues..."
+          # Add logic here to handle specific file errors or retry mechanisms
