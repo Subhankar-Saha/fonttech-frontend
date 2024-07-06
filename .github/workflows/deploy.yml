@@ -1,23 +1,27 @@
 name: Deploy to cPanel
-
-on:
+'on':
   push:
     branches:
       - main
-
 jobs:
-  deploy:
-    name: Deploy to cPanel
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
-
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
       - name: Install dependencies
-        run: npm cache clean --force && npm install --ci
-
+        run: npm cache clean && npm install --ci
       - name: Build project
         run: npm run build-dev
-
-      - name: FTP Deploy
-        run: |
-          echo "Uploading files to cPanel..."
-          lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R ./dist/ /"
+      - name: Deploy to cPanel
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: '${{ secrets.FTP_SERVER }}'
+          username: '${{ secrets.FTP_USERNAME }}'
+          password: '${{ secrets.FTP_PASSWORD }}'
+          port: '${{ secrets.FTP_PORT }}'
+          local-dir: ./dist/
+          server-dir: /
