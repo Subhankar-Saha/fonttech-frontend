@@ -4,23 +4,27 @@ name: Deploy to cPanel
     branches:
       - main
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  deploy:
+    name: Deploy to cPanel
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 18.16.0
     steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '${{ matrix.node-version }}'
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      - name: Node Version
-        run: node -v
-      - name: Node Cache Clean
-        run: npm cache clean --force
       - name: Install dependencies
         run: npm install --ci
       - name: Build project
         run: npm run build-dev
-      - name: Deploy to cPanel
+      - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: '${{ secrets.FTP_SERVER }}'
