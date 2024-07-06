@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 2
       - name: Install dependencies
-        run: npm cache clean && npm install --ci
+        run: npm install --ci
       - name: Build project
         run: npm run build-dev
       - name: Deploy to cPanel
