@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Install dependencies
-        run: npm install --ci
+        run: npm cache clean --force && npm install --ci
 
       - name: Build project
         run: npm run build-dev
