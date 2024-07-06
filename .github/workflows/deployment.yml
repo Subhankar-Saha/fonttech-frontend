@@ -1,21 +1,34 @@
 name: Deploy to cPanel
+
 on:
   push:
     branches:
       - master
+
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 2
-      # Deploy to cPanel
-      - name: FTP-Deploy-Action
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build-dev
+
+      - name: Deploy to cPanel
         uses: Subhankar-Saha/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
+          local-dir: ./dist
+          server-dir: /public_html
+
