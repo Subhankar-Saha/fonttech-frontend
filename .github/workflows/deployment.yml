@@ -1,37 +1,41 @@
 name: Deploy to cPanel
-'on':
+
+on:
   push:
     branches:
       - master
+
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 2
+
       - name: Install dependencies
         run: npm install --ci
+
       - name: Build project
         run: npm run build-dev
+
       - name: Gzip CSS and JS files
         run: |
-          # Change to the dist directory
           cd dist
-          # Gzip all .css and .js files
-          find . -name "*.css" -exec gzip -k {} \;
-          find . -name "*.js" -exec gzip -k {} \;
-          # Rename .gz files to original filenames
-          find . -name "*.css.gz" -exec sh -c 'mv "$0" "${0%.gz}"' {} \;
-          find . -name "*.js.gz" -exec sh -c 'mv "$0" "${0%.gz}"' {} \;
+          find . -type f -name "*.css" -exec gzip -k {} \;
+          find . -type f -name "*.js" -exec gzip -k {} \;
+          find . -type f -name "*.css.gz" -exec sh -c 'mv "$0" "${0%.gz}"' {} \;
+          find . -type f -name "*.js.gz" -exec sh -c 'mv "$0" "${0%.gz}"' {} \;
+
       - name: Deploy to cPanel
-        uses: SamKirkland/FTP-Deploy-Action@4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
-          server: '${{ secrets.FTP_SERVER }}'
-          username: '${{ secrets.FTP_USERNAME }}'
-          password: '${{ secrets.FTP_PASSWORD }}'
-          port: '${{ secrets.FTP_PORT }}'
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
           local-dir: ./dist/
           server-dir: /public_html/
