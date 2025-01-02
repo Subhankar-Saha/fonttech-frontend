@@ -1,49 +1,3 @@
-# name: Deploy to cPanel
-# 'on':
-#   push:
-#     branches:
-#       - main
-# jobs:
-#   deploy:
-#     name: Deploy to cPanel
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         node-version:
-#           - 18.16.0
-#     steps:
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: '${{ matrix.node-version }}'
-#       - name: Checkout repository
-#         uses: actions/checkout@v4
-#         with:
-#           fetch-depth: 2
-#       - name: Node Version
-#         run: node -v
-#       - name: Node Cache Clean
-#         run: npm cache clean --force
-#       - name: Install dependencies
-#         run: npm install --force
-#       - name: Build project
-#         run: npm run build-dev
-#       - name: FTP Deploy
-#         id: ftp-deploy
-#         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-#         with:
-#           server: 37.27.71.198
-#           username: cicd@fonttech.in
-#           password: o4^l1)P&&avC
-#           port: 21
-#           local-dir: ./dist/
-#           server-dir: /
-#       - name: Check FTP deployment status
-#         if: '${{ failure() }}'
-#         run: |
-#           echo "FTP deployment failed. Checking if any files caused issues..."
-#           # Add logic here to handle specific file errors or retry mechanisms
-
 name: Deploy to cPanel
 'on':
   push:
@@ -74,16 +28,18 @@ jobs:
         run: npm install --force
       - name: Build project
         run: npm run build-dev
-      - name: FTP Deploy with Fallback
+      - name: FTP Deploy
         id: ftp-deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 37.27.71.198
+          username: cicd@fonttech.in
+          password: o4^l1)P&&avC
+          port: 21
+          local-dir: ./dist/
+          server-dir: /
+      - name: Check FTP deployment status
+        if: '${{ failure() }}'
         run: |
-          echo "Trying first password..."
-          npx ftp-deploy --server=37.27.71.198 --username=cicd@fonttech.in --password="o4^l1)P&&avC" --port=21 --local-dir=./dist/ --server-dir=/
-          if [ $? -ne 0 ]; then
-            echo "First attempt failed. Trying fallback password..."
-            npx ftp-deploy --server=37.27.71.198 --username=cicd@fonttech.in --password="QcSv0w)EnVhv" --port=21 --local-dir=./dist/ --server-dir=/
-            if [ $? -ne 0 ]; then
-              echo "Both attempts failed. Exiting with error."
-              exit 1
-            fi
-          fi
+          echo "FTP deployment failed. Checking if any files caused issues..."
+          # Add logic here to handle specific file errors or retry mechanisms
